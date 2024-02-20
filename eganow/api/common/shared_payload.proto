@@ -1,7 +1,7 @@
 syntax = "proto3";
 package eganow.api;
 
-option go_package = "github.com/eganow/core/merchant/api;pb";
+option go_package = "github.com/eganow/core/api;pb";
 
 enum CountryFilter {
   COUNTRY_FILTER_UNSPECIFIED = 0;
