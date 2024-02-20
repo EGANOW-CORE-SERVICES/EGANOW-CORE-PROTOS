@@ -3,10 +3,10 @@ package eganow.api;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-message CommonEmpty {}
+message MerchantEmpty {}
 
 // The JSON representation for `StringValue` is JSON string.
-message CommonStringValue {
+message MerchantStringValue {
   // The string value.
   string value = 1;
 }

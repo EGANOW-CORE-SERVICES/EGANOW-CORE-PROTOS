@@ -9,7 +9,7 @@ import "eganow/api/common/common.proto";
 
 service OtpSvc {
   // send OTP to a given phone number or email
-  rpc SendOTP (SendOTPRequest) returns (StringValue) {
+  rpc SendOTP (SendOTPRequest) returns (CommonStringValue) {
     option (google.api.http) = {
       post: "/api/v1/common/otp/generate"
       body: "*"
@@ -17,7 +17,7 @@ service OtpSvc {
   }
 
   // verify OTP for a given phone number or email
-  rpc VerifyOTP (VerifyOTPRequest) returns (StringValue) {
+  rpc VerifyOTP (VerifyOTPRequest) returns (CommonStringValue) {
     option (google.api.http) = {
       post: "/api/v1/common/otp/verify"
       body: "*"
