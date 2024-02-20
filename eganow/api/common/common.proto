@@ -1,5 +1,5 @@
 syntax = "proto3";
-package eganow.api;
+package eganow.api.common;
 
 option go_package = "github.com/eganow/core/api;pb";
 
