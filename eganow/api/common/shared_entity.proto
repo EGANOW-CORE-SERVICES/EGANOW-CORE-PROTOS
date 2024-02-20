@@ -1,0 +1,27 @@
+syntax = "proto3";
+package eganow.api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+message CountryData {
+  string CountryName = 1;
+  string CountryCode = 2;
+  string CountryDialCode = 3;
+  string CurrencyIso = 4;
+  string CountryFlagUrl = 5;
+  int32 MobileNoMinLen = 6;
+  int32 MobileNoMaxLen = 7;
+}
+
+enum GroupValue {
+  GROUP_VALUE_UNKNOWN = 0;
+  GROUP_VALUE_PERSONAL = 1;
+  GROUP_VALUE_BUSINESS = 2;
+}
+
+enum ClientPlatform {
+  CLIENT_UNKNOWN = 0;
+  CLIENT_MOBILE = 1;
+  CLIENT_WEB = 2;
+  CLIENT_API = 3;
+}

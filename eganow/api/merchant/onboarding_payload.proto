@@ -1,0 +1,50 @@
+syntax = "proto3";
+package eganow.api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+message CreateMerchantRequest {
+
+  message PersonalInformation {
+    string email = 1 [(google.api.field_behavior) = REQUIRED];
+    string mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+    string first_name = 4 [(google.api.field_behavior) = REQUIRED];
+    string last_name = 5 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  message BusinessInformation {
+    string business_name = 6 [(google.api.field_behavior) = REQUIRED];
+    string mobile_number = 7 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+  }
+
+  PersonalInformation personal_information = 1 [(google.api.field_behavior) = REQUIRED];
+  BusinessInformation business_information = 2 [(google.api.field_behavior) = REQUIRED];
+  string password = 3 [(google.api.field_behavior) = REQUIRED];
+}
+
+message CheckMerchantAccountRequest {
+  // send only one of these fields (email or phone_number)
+  oneof check_merchant_account_payload {
+    string merchant_email = 1 [(google.api.field_behavior) = REQUIRED];
+    string merchant_mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+  }
+}
+
+message LoginMerchantRequest {
+  string email = 1 [(google.api.field_behavior) = REQUIRED];
+  string password = 2 [(google.api.field_behavior) = REQUIRED];
+}
+
+message AuthMerchantResponse {
+  string access_token = 1; // JWT token for user authorization (for now)
+  string full_name = 2; // full name of the merchant
+  string first_name = 3; // first name of the merchant
+  string last_name = 4; // last name of the merchant
+  string business_name = 5; // business name of the merchant
+  string merchant_id = 7; // unique identifier for the merchant
+  string profile_picture = 8; // URL to the profile picture of the merchant (if any)
+  string email = 9; // email of the merchant
+  string mobile_number = 10; // mobile number of the merchant
+}

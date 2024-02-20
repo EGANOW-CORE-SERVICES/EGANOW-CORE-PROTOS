@@ -1,0 +1,22 @@
+syntax = "proto3";
+package eganow.api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+enum OtpGenerationPurpose {
+  OTP_GEN_UNSPECIFIED = 0;
+  OTP_GEN_SIGNUP = 1;
+  OTP_GEN_TRANSACTION = 2;
+}
+
+// used when generating OTP
+message SendOTPRequest {
+  string business_email_address = 1;
+  OtpGenerationPurpose purpose = 2;
+}
+
+message VerifyOTPRequest {
+  string business_email_address = 1;
+  string otp = 2;
+  OtpGenerationPurpose purpose = 3;
+}

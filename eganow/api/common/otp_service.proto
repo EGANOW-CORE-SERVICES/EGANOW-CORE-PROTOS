@@ -1,0 +1,26 @@
+syntax = "proto3";
+package eganow.api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/annotations.proto";
+import "eganow/api/common/otp_payload.proto";
+import "eganow/api/common/common.proto";
+
+service OtpSvc {
+  // send OTP to a given phone number or email
+  rpc SendOTP (SendOTPRequest) returns (StringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/common/otp/generate"
+      body: "*"
+    };
+  }
+
+  // verify OTP for a given phone number or email
+  rpc VerifyOTP (VerifyOTPRequest) returns (StringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/common/otp/verify"
+      body: "*"
+    };
+  }
+}

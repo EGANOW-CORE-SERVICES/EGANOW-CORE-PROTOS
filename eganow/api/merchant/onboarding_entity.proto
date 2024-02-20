@@ -1,0 +1,36 @@
+syntax = "proto3";
+package eganow.api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+// MerchantAccount is the entity that represents
+// a merchant/business customer account in the database.
+message MerchantAccount {
+  string CustomerGuid = 1;
+  string CustomerId = 2;
+  string MobileNumber = 3;
+  string EmailAddress = 4;
+  string PersonalBusinessGroup = 5;
+  int32 PersonalBusinessGroupValue = 6;
+  string FirstName = 7;
+  string LastName = 8;
+  string BusinessName = 9;
+  string LanguageId = 10;
+  string CustomerPINHash = 11;
+  string UserJwtToken = 12;
+  string CountryCode = 13;
+  int32 CountryDialCode = 14;
+  bool IsSuccess = 15;
+  string Message = 16;
+  string PasswordExistValue = 17;
+  string RegisterModeMobileWebUssd = 18;
+  string IdCardStatus = 19;
+  string OperatingCountryYesNo = 20;
+  string CustomerProfilePicImageUrl = 21;
+  int32 MobileNumberOrEmailExist = 22;
+  int32 JwtNoOfMinutes = 23;
+  int32 ApiVersionNo = 24;
+  string AppversionNo = 25;
+  string AppUpdateRequirementStatus = 26;
+  string CustomerStatus = 27;
+}

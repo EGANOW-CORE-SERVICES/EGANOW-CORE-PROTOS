@@ -1,0 +1,35 @@
+syntax = "proto3";
+package eganow.api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/common/common.proto";
+import "eganow/api/merchant/onboarding_payload.proto";
+import "google/api/annotations.proto";
+
+service MerchantOnboardingSvc {
+  // CreateMerchant creates a new merchant account after they have been onboarded
+  rpc CreateMerchantAccount(CreateMerchantRequest) returns (AuthMerchantResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/merchant/onboarding/register"
+      body: "*"
+    };
+  }
+
+  // CheckIfMerchantAccountExists checks if a merchant account exists.
+  // if they don't, it returns a `not found` error else proceed to login
+  rpc CheckIfMerchantAccountExists(CheckMerchantAccountRequest) returns (Empty) {
+    option (google.api.http) = {
+      post: "/api/v1/merchant/onboarding/check-merchant-account-exists"
+      body: "*"
+    };
+  }
+
+  // LoginMerchant logs in a merchant with their email and password
+  rpc LoginMerchant(LoginMerchantRequest) returns (AuthMerchantResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/merchant/onboarding/login"
+      body: "*"
+    };
+  }
+}
