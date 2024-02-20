@@ -1,7 +1,7 @@
 syntax = "proto3";
 package eganow.api;
 
-option go_package = "github.com/eganow/core/api;pb";
+option go_package = "github.com/eganow/core/api;merchantpb";
 
 import "eganow/api/merchant/common.proto";
 import "eganow/api/merchant/onboarding_payload.proto";
