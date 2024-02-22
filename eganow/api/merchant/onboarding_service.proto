@@ -17,7 +17,7 @@ service MerchantOnboardingSvc {
   }
 
   // CheckIfMerchantAccountExists checks if a merchant account exists.
-  // if they don't, it returns a `not found` error else proceed to login
+  // if merchant exists, it returns the error code `already_exists`
   rpc CheckIfMerchantAccountExists(CheckMerchantAccountRequest) returns (MerchantEmpty) {
     option (google.api.http) = {
       post: "/api/v1/merchant/onboarding/check-merchant-account-exists"
