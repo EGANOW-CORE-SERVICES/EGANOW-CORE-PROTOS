@@ -4,7 +4,7 @@ package eganow.api.customer;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-import "onboarding_payload.proto";
+import "eganow/api/customer/onboarding_payload.proto";
 import "eganow/api/customer/common.proto";
 import "google/api/annotations.proto";
 
