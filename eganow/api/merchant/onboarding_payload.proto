@@ -33,7 +33,7 @@ message CreateMerchantRequest {
   PersonalInformation personal_information = 1 [(google.api.field_behavior) = REQUIRED];
   BusinessInformation business_information = 2 [(google.api.field_behavior) = REQUIRED];
   string password = 3 [(google.api.field_behavior) = REQUIRED]; // minimum 8 characters
-  string auth_pin = 4 [(google.api.field_behavior) = REQUIRED]; // minimum 6 characters
+  string auth_pin = 4 [(google.api.field_behavior) = REQUIRED]; // minimum 6 characters (required for transactions)
   string otp_value = 5 [(google.api.field_behavior) = REQUIRED]; // the already verified OTP value
 }
 
