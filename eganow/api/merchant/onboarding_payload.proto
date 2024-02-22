@@ -7,22 +7,34 @@ import "google/api/field_behavior.proto";
 
 message CreateMerchantRequest {
 
+  // The merchant's personal information
   message PersonalInformation {
     string email = 1 [(google.api.field_behavior) = REQUIRED];
     string mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
-    string first_name = 4 [(google.api.field_behavior) = REQUIRED];
-    string last_name = 5 [(google.api.field_behavior) = REQUIRED];
+    string first_name = 3 [(google.api.field_behavior) = REQUIRED];
+    string last_name = 4 [(google.api.field_behavior) = REQUIRED];
+    string tin = 5; // Tax Identification Number (optional)
   }
 
+  // The merchant's business information
   message BusinessInformation {
-    string business_name = 6 [(google.api.field_behavior) = REQUIRED];
-    string mobile_number = 7 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+    string name = 1 [(google.api.field_behavior) = REQUIRED];
+    string mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+    string postal_zip_code = 3; // postal or zip code (optional)
+    string street_address = 4; // street address (optional)
+    string city = 5; // city or town (optional)
+    string province_state = 6; // province or state or region (optional)
+    string digital_address = 7; // digital address (optional)
+    string sector = 8; // ID of business sector (optional)
+    string industry = 9; // ID of business industry (optional)
+    string registration_number = 10; // business registration number (optional)
   }
 
   PersonalInformation personal_information = 1 [(google.api.field_behavior) = REQUIRED];
   BusinessInformation business_information = 2 [(google.api.field_behavior) = REQUIRED];
-  string password = 3 [(google.api.field_behavior) = REQUIRED];
-  string otp_value = 8 [(google.api.field_behavior) = REQUIRED];
+  string password = 3 [(google.api.field_behavior) = REQUIRED]; // minimum 8 characters
+  string auth_pin = 4 [(google.api.field_behavior) = REQUIRED]; // minimum 6 characters
+  string otp_value = 5 [(google.api.field_behavior) = REQUIRED]; // the already verified OTP value
 }
 
 message CheckMerchantAccountRequest {

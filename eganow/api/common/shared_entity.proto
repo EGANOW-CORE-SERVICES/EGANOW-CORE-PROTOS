@@ -19,6 +19,13 @@ enum GroupValue {
   GROUP_VALUE_BUSINESS = 2;
 }
 
+// AccountLocationValue is used to define the location of the account (required for new customer registration)
+enum AccountLocationValue {
+  ACCOUNT_LOCATION_UNKNOWN = 0;
+  ACCOUNT_LOCATION_INTERNAL = 1;
+  ACCOUNT_LOCATION_EXTERNAL = 2;
+}
+
 enum ClientPlatform {
   CLIENT_UNKNOWN = 0;
   CLIENT_MOBILE = 1;
