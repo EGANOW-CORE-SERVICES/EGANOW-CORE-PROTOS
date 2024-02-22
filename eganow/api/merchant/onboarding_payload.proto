@@ -13,21 +13,12 @@ message CreateMerchantRequest {
     string mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
     string first_name = 3 [(google.api.field_behavior) = REQUIRED];
     string last_name = 4 [(google.api.field_behavior) = REQUIRED];
-    string tin = 5; // Tax Identification Number (optional)
   }
 
   // The merchant's business information
   message BusinessInformation {
     string name = 1 [(google.api.field_behavior) = REQUIRED];
     string mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
-    string postal_zip_code = 3; // postal or zip code (optional)
-    string street_address = 4; // street address (optional)
-    string city = 5; // city or town (optional)
-    string province_state = 6; // province or state or region (optional)
-    string digital_address = 7; // digital address (optional)
-    string sector = 8; // ID of business sector (optional)
-    string industry = 9; // ID of business industry (optional)
-    string registration_number = 10; // business registration number (optional)
   }
 
   PersonalInformation personal_information = 1 [(google.api.field_behavior) = REQUIRED];
@@ -60,4 +51,27 @@ message AuthMerchantResponse {
   string profile_picture = 8; // URL to the profile picture of the merchant (if any)
   string email = 9; // email of the merchant
   string mobile_number = 10; // mobile number of the merchant
+}
+
+message UpdateMerchantAccount {
+  message BusinessInformation {
+    string name = 1;
+    string mobile_number = 2; // MSISDN format (+233244123456)
+    string postal_zip_code = 3; // postal or zip code (optional)
+    string street_address = 4; // street address (optional)
+    string city = 5; // city or town (optional)
+    string province_state = 6; // province or state or region (optional)
+    string digital_address = 7; // digital address (optional)
+    string sector = 8; // ID of business sector (optional)
+    string industry = 9; // ID of business industry (optional)
+    string registration_number = 10; // business registration number (optional)
+  }
+
+  message PersonalInformation {
+    string email = 1;
+    string mobile_number = 2; // MSISDN format (+233244123456)
+    string first_name = 3;
+    string last_name = 4;
+    string tin = 5; // Tax Identification Number (optional)
+  }
 }
