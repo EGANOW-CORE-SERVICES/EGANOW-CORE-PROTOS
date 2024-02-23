@@ -12,21 +12,21 @@ import "google/api/annotations.proto";
 service CustomerOnboardingSvc {
   rpc CreateCustomerAccount(CreateCustomerRequest) returns (CustomerStringValue) {
       option(google.api.http) = {
-        post : "/api/v1/customer/onboarding/register",
+        post : "/api/v1/customers/onboarding/register",
         body : "*"
       };
   }
 
   rpc LoginCustomer(LoginCustomerRequest) returns (AuthCustomerResponse) {
      option(google.api.http) = {
-       post : "/api/v1/customer/onboarding/login",
+       post : "/api/v1/customers/onboarding/login",
        body : "*"
      };
   }
 
   rpc CheckIfCustomerAccountExist(CheckCustomerAccountRequest) returns (AuthCustomerResponse) {
     option(google.api.http) = {
-      post : "/api/v1/customer/onboarding/check-merchant-account-exists",
+      post : "/api/v1/customers/onboarding/check-merchant-account-exists",
       body : "*"
     };
   }
