@@ -77,8 +77,7 @@ message UpdateMerchantAccount {
 
 message ResetPasswordRequest {
   string email = 1 [(google.api.field_behavior) = REQUIRED];
-  string temporal_password = 2 [(google.api.field_behavior) = REQUIRED]; // the temporal password sent to the user's email
-  string new_password = 3 [(google.api.field_behavior) = REQUIRED]; // minimum 8 characters
+  string new_password = 2 [(google.api.field_behavior) = REQUIRED]; // minimum 8 characters
 }
 
 // @todo -> allow merchant to change PIN in the future for transactions
