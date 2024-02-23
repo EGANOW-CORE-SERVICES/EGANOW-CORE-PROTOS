@@ -32,4 +32,20 @@ service MerchantOnboardingSvc {
       body: "*"
     };
   }
+
+  // RequestPasswordReset sends a temporal password to the merchant's email
+  rpc RequestPasswordReset(MerchantStringValue) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/onboarding/request-password-reset"
+      body: "*"
+    };
+  }
+
+  // ResetPassword resets the merchant's password with a new one after they have requested a password reset
+  rpc ResetPassword(ResetPasswordRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/onboarding/reset-password"
+      body: "*"
+    };
+  }
 }
