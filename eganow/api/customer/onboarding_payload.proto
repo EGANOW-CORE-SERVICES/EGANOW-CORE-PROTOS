@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package eganow.api.customer;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+
+message CreateCustomerRequest {
+
+    string email = 1;
+    string mobile_number = 2 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+    string first_name = 3 [(google.api.field_behavior) = REQUIRED];
+    string last_name = 4 [(google.api.field_behavior) = REQUIRED];
+    string tin = 5; // Tax Identification Number (optional)
+    string postal_zip_code = 6; // postal or zip code (optional)
+    string street_address = 7; // street address (optional)
+    string city = 8; // city or town (optional)
+    string province_state = 9; // province or state or region (optional)
+    string digital_address = 10; // digital address (optional)
+    string sector = 11; // ID of business sector (optional)
+    string industry = 12; // ID of business industry (optional)
+    string country_code = 13;
+    string password = 14 [(google.api.field_behavior) = REQUIRED]; // minimum 8 characters
+    string auth_pin = 15 [(google.api.field_behavior) = REQUIRED]; // minimum 6 characters (required for transactions)
+    string otp_value =16 [(google.api.field_behavior) = REQUIRED]; // the already verified OTP value
+
+}
+
+
+message LoginCustomerRequest {
+  string phone_number = 1 [(google.api.field_behavior) = REQUIRED];
+  string password = 2 [(google.api.field_behavior) = REQUIRED];
+}
+
+message AuthCustomerResponse {
+  string access_token = 1; // JWT token for user authorization (for now)
+  string full_name = 2; // full name of the merchant
+  string first_name = 3; // first name of the merchant
+  string last_name = 4; // last name of the merchant
+  string email = 9; // email of the merchant
+  string mobile_number = 10; // mobile number of the merchant
+}
+
+message CheckCustomerAccountRequest {
+    string merchant_mobile_number = 1 [(google.api.field_behavior) = REQUIRED]; // MSISDN format (+233244123456)
+}

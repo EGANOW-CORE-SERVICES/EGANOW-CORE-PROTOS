@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package eganow.api.customer;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/customer/onboarding_payload.proto";
+import "eganow/api/customer/common.proto";
+import "google/api/annotations.proto";
+
+
+service CustomerOnboardingSvc {
+  rpc CreateCustomerAccount(CreateCustomerRequest) returns (CustomerStringValue) {
+      option(google.api.http) = {
+        post : "/api/v1/customer/onboarding/register",
+        body : "*"
+      };
+  }
+
+  rpc LoginCustomer(LoginCustomerRequest) returns (AuthCustomerResponse) {
+     option(google.api.http) = {
+       post : "/api/v1/customer/onboarding/login",
+       body : "*"
+     };
+  }
+
+  rpc CheckIfCustomerAccountExist(CheckCustomerAccountRequest) returns (AuthCustomerResponse) {
+    option(google.api.http) = {
+      post : "/api/v1/customer/onboarding/check-merchant-account-exists",
+      body : "*"
+    };
+  }
+}

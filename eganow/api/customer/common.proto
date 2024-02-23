@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package eganow.api.customer;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+message CustomerEmpty {}
+
+
+message CustomerStringValue {
+  string value = 1;
+}
