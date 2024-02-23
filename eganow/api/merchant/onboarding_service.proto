@@ -11,16 +11,16 @@ service MerchantOnboardingSvc {
   // CreateMerchant creates a new merchant account after they have been onboarded
   rpc CreateMerchantAccount(CreateMerchantRequest) returns (AuthMerchantResponse) {
     option (google.api.http) = {
-      post: "/api/v1/merchant/onboarding/register"
+      post: "/api/v1/merchants/onboarding/register"
       body: "*"
     };
   }
 
   // CheckIfMerchantAccountExists checks if a merchant account exists.
   // if merchant exists, it returns the error code `already_exists`
-  rpc CheckIfMerchantAccountExists(CheckMerchantAccountRequest) returns (MerchantEmpty) {
+  rpc CheckIfMerchantAccountExists(CheckMerchantAccountRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
-      post: "/api/v1/merchant/onboarding/check-merchant-account-exists"
+      post: "/api/v1/merchants/onboarding/check-merchant-account-exists"
       body: "*"
     };
   }
@@ -28,7 +28,7 @@ service MerchantOnboardingSvc {
   // LoginMerchant logs in a merchant with their email and password
   rpc LoginMerchant(LoginMerchantRequest) returns (AuthMerchantResponse) {
     option (google.api.http) = {
-      post: "/api/v1/merchant/onboarding/login"
+      post: "/api/v1/merchants/onboarding/login"
       body: "*"
     };
   }
