@@ -32,3 +32,9 @@ enum ClientPlatform {
   CLIENT_WEB = 2;
   CLIENT_API = 3;
 }
+
+enum UserAccountStatus {
+  USER_ACCOUNT_STATUS_UNKNOWN = 0;
+  USER_ACCOUNT_STATUS_ACTIVE = 1; // -> ACTIVE in the database
+  USER_ACCOUNT_STATUS_BLOCKED = 2; // -> BLOCKED in the database
+}
