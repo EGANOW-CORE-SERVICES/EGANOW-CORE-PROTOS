@@ -10,7 +10,7 @@ service CommonDataSvc {
   // get countries list
   rpc GetCountries (GetCountriesRequest) returns (GetCountriesResponse) {
     option (google.api.http) = {
-      get: "/api/v1/common/setup/countries?filter={filter=.*}"
+      get: "/api/v1/common/countries?filter={filter=.*}"
     };
   }
 }
