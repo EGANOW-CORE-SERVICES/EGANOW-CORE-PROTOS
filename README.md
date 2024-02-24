@@ -2,14 +2,14 @@
 
 Always access the service with the basic auth header & pass the `country_code` & `language_id` in the metadata.
 
-```javascript
+```typescript
 const metadata = new grpc.Metadata();
-metadata.add('x-country-code', 'GH0233');
-metadata.add('x-language-id', 'en');
-metadata.add('x-ega-user-access-token', '<provide the access token for the current user>');
-metadata.add('Authorization', 'Basic ' + Buffer.from('username:password').toString('base64'));
+metadata.add('X-Country-Code', 'GH0233');
+metadata.add('X-Language-Id', 'en');
+metadata.add('X-Ega-User-Access-Token', '<provide the access token for the current user>');
+metadata.add('Authorization', 'Basic ' + btoa('username:password'));
 
-const client = new MerchantOnboardingSvcClient('http://185-3-92-47.ip.linodeusercontent.com:9999', null, null);
+const client = new MerchantOnboardingSvcClient('https://185-3-92-47.ip.linodeusercontent.com:9999', null, null);
 
 ```
 
