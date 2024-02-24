@@ -42,7 +42,7 @@ service MerchantOnboardingSvc {
   }
 
   // ResetPassword resets the merchant's password with a new one after they have requested a password reset
-  rpc ResetPassword(ResetPasswordRequest) returns (MerchantStringValue) {
+  rpc ResetPassword(ResetPasswordRequest) returns (AuthMerchantResponse) {
     option (google.api.http) = {
       post: "/api/v1/merchants/onboarding/reset-password"
       body: "*"
