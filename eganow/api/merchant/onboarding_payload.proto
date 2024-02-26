@@ -88,7 +88,7 @@ message UpdateBusinessInfoRequest {
 message AddBusinessContactRequest {
 
   message IdentityDocumentDetails {
-    string id_type = 1 [(google.api.field_behavior) = REQUIRED]; // type of ID
+    CustomerIDTypes id_type = 1 [(google.api.field_behavior) = REQUIRED]; // type of ID
     string id_number = 2 [(google.api.field_behavior) = REQUIRED]; // ID number
     string id_expiry_date = 3 [(google.api.field_behavior) = REQUIRED]; // ID expiry date
     string place_of_issue = 4 [(google.api.field_behavior) = REQUIRED]; // place of issue
