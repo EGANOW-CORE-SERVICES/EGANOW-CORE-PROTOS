@@ -85,4 +85,20 @@ message UpdateBusinessInfoRequest {
   string vat_number = 18 [(google.api.field_behavior) = REQUIRED]; // VAT number
 }
 
-// @todo -> allow merchant to change PIN in the future for transactions
+message AddBusinessContactRequest {
+
+  message IdentityDocumentDetails {
+    string id_type = 1 [(google.api.field_behavior) = REQUIRED]; // type of ID
+    string id_number = 2 [(google.api.field_behavior) = REQUIRED]; // ID number
+    string id_expiry_date = 3 [(google.api.field_behavior) = REQUIRED]; // ID expiry date
+    string place_of_issue = 4 [(google.api.field_behavior) = REQUIRED]; // place of issue
+    bytes card_image_url = 5 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the ID card image
+  }
+
+  string email = 1 [(google.api.field_behavior) = REQUIRED]; // email of the contact person
+  string first_name = 2 [(google.api.field_behavior) = REQUIRED]; // first name of the contact person
+  string last_name = 3 [(google.api.field_behavior) = REQUIRED]; // last name of the contact person
+  string mobile_number = 4 [(google.api.field_behavior) = REQUIRED]; // mobile number of the contact person
+  DirectorPosition position = 5 [(google.api.field_behavior) = REQUIRED]; // position of the director
+  IdentityDocumentDetails id_details = 6 [(google.api.field_behavior) = REQUIRED]; // identity document details of the contact person
+}

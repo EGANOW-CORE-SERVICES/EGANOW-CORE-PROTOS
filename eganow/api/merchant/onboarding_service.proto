@@ -51,7 +51,14 @@ service MerchantOnboardingSvc {
 
   rpc UpdateBusinessInfo(UpdateBusinessInfoRequest) returns  (MerchantStringValue) {
     option (google.api.http) = {
-      put: "/api/v1/merchants/onboarding/business-info"
+      put: "/api/v1/merchants/onboarding/businesses/info"
+      body: "*"
+    };
+  }
+
+  rpc AddBusinessContactPerson(AddBusinessContactRequest) returns  (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/onboarding/businesses/contact"
       body: "*"
     };
   }
