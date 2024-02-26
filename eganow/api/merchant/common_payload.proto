@@ -1,0 +1,33 @@
+syntax = "proto3";
+package eganow.api.merchant;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+message MerchantRegulator {
+  string id = 1;
+  string name = 2;
+}
+
+message MerchantIndustry {
+  string id = 1;
+  string name = 2;
+}
+
+message MerchantBusinessSector {
+  string id = 1;
+  string name = 2;
+}
+
+message MerchantRegulatorList {
+  repeated MerchantRegulator regulators = 1;
+}
+
+message MerchantBusinessSectorList {
+  repeated MerchantBusinessSector sectors = 1;
+}
+
+message MerchantIndustryList {
+  repeated MerchantIndustry industries = 1;
+}

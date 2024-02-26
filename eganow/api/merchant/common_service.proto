@@ -1,0 +1,30 @@
+syntax = "proto3";
+package eganow.api.merchant;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/merchant/common.proto";
+import "eganow/api/merchant/common_payload.proto";
+import "google/api/annotations.proto";
+
+
+service MerchantCommonSvc {
+  rpc GetActiveRegulators(MerchantEmpty) returns (MerchantRegulatorList) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/common/regulators"
+    };
+  }
+
+  rpc GetBusinessSectors(MerchantEmpty) returns (MerchantBusinessSectorList) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/common/business-sectors"
+    };
+  }
+
+  rpc GetActiveIndustries(MerchantStringValue) returns  (MerchantIndustryList) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/common/business-sectors/{value}/industries"
+    };
+  }
+
+}

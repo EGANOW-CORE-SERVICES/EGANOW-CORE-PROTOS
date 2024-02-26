@@ -48,4 +48,12 @@ service MerchantOnboardingSvc {
       body: "*"
     };
   }
+
+  rpc UpdateBusinessInfo(UpdateBusinessInfoRequest) returns  (MerchantStringValue) {
+    option (google.api.http) = {
+      put: "/api/v1/merchants/onboarding/business-info"
+      body: "*"
+    };
+  }
+
 }
