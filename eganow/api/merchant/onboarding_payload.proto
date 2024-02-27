@@ -92,7 +92,7 @@ message AddBusinessContactRequest {
     string id_number = 2 [(google.api.field_behavior) = REQUIRED]; // ID number
     string id_expiry_date = 3 [(google.api.field_behavior) = REQUIRED]; // ID expiry date
     string place_of_issue = 4 [(google.api.field_behavior) = REQUIRED]; // place of issue
-    bytes card_image_url = 5 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the ID card image
+    bytes raw_card_image = 5 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the ID card image
   }
 
   string email = 1 [(google.api.field_behavior) = REQUIRED]; // email of the contact person
