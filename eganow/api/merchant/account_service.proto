@@ -9,6 +9,13 @@ import "google/api/annotations.proto";
 
 
 service MerchantAccountSvc {
+  // UpdateBusinessInfo is a remote procedure call (RPC) that updates a merchant's business information.
+  // It takes an UpdateBusinessInfoRequest message as input and returns a MerchantStringValue message.
+  // The UpdateBusinessInfoRequest message should contain the necessary information to update a merchant's business information.
+  // The MerchantStringValue message will contain the result of the update operation.
+  //
+  // This RPC is accessible via a HTTP PUT request to the "/api/v1/merchants/accounts/info" endpoint.
+  // The body of the HTTP request should contain the UpdateBusinessInfoRequest message.
   rpc UpdateBusinessInfo(UpdateBusinessInfoRequest) returns  (MerchantStringValue) {
     option (google.api.http) = {
       put: "/api/v1/merchants/accounts/info"
@@ -16,6 +23,13 @@ service MerchantAccountSvc {
     };
   }
 
+  // AddBusinessContactPerson is a remote procedure call (RPC) that adds a contact person to a merchant's business.
+  // It takes an AddBusinessContactRequest message as input and returns a MerchantStringValue message.
+  // The AddBusinessContactRequest message should contain the necessary information to add a contact person to a merchant's business.
+  // The MerchantStringValue message will contain the result of the add operation.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/contact" endpoint.
+  // The body of the HTTP request should contain the AddBusinessContactRequest message.
   rpc AddBusinessContactPerson(AddBusinessContactRequest) returns  (MerchantStringValue) {
     option (google.api.http) = {
       post: "/api/v1/merchants/accounts/contact"

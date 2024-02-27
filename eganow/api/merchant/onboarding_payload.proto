@@ -3,7 +3,6 @@ package eganow.api.merchant;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-import "eganow/api/merchant/onboarding_entity.proto";
 import "google/api/field_behavior.proto";
 
 message CreateMerchantRequest {
