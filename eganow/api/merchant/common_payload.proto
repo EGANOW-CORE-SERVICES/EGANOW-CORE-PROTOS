@@ -3,8 +3,6 @@ package eganow.api.merchant;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-import "google/api/field_behavior.proto";
-
 message MerchantRegulator {
   string id = 1;
   string name = 2;
