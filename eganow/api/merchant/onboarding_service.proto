@@ -8,57 +8,73 @@ import "eganow/api/merchant/onboarding_payload.proto";
 import "google/api/annotations.proto";
 
 service MerchantOnboardingSvc {
-  // CreateMerchant creates a new merchant account after they have been onboarded
+  // CreateMerchantAccount is a remote procedure call (RPC) that creates a new merchant account.
+  // It takes a CreateMerchantRequest message as input and returns an AuthMerchantResponse message.
+  // The CreateMerchantRequest message should contain the necessary information to create a new merchant account.
+  // The AuthMerchantResponse message will contain the authentication details for the newly created merchant account.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/register" endpoint.
+  // The body of the HTTP request should contain the CreateMerchantRequest message.
   rpc CreateMerchantAccount(CreateMerchantRequest) returns (AuthMerchantResponse) {
     option (google.api.http) = {
-      post: "/api/v1/merchants/onboarding/register"
+      post: "/api/v1/merchants/register"
       body: "*"
     };
   }
 
-  // CheckIfMerchantAccountExists checks if a merchant account exists.
-  // if merchant exists, it returns the error code `already_exists`
+
+  // CheckIfMerchantAccountExists is a remote procedure call (RPC) that checks if a merchant account exists.
+  // It takes a CheckMerchantAccountRequest message as input and returns a MerchantStringValue message.
+  // The CheckMerchantAccountRequest message should contain the necessary information to check the existence of a merchant account.
+  // The MerchantStringValue message will contain the result of the check.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/check-account" endpoint.
+  // The body of the HTTP request should contain the CheckMerchantAccountRequest message.
   rpc CheckIfMerchantAccountExists(CheckMerchantAccountRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
-      post: "/api/v1/merchants/onboarding/check-merchant-account-exists"
+      post: "/api/v1/merchants/check-account"
       body: "*"
     };
   }
 
-  // LoginMerchant logs in a merchant with their email and password
+  // LoginMerchant is a remote procedure call (RPC) that logs in a merchant.
+  // It takes a LoginMerchantRequest message as input and returns an AuthMerchantResponse message.
+  // The LoginMerchantRequest message should contain the necessary information to log in a merchant.
+  // The AuthMerchantResponse message will contain the authentication details for the logged in merchant.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/login" endpoint.
+  // The body of the HTTP request should contain the LoginMerchantRequest message.
   rpc LoginMerchant(LoginMerchantRequest) returns (AuthMerchantResponse) {
     option (google.api.http) = {
-      post: "/api/v1/merchants/onboarding/login"
+      post: "/api/v1/merchants/login"
       body: "*"
     };
   }
 
-  // RequestPasswordReset sends a temporal password to the merchant's email
+  // RequestPasswordReset is a remote procedure call (RPC) that requests a password reset for a merchant.
+  // It takes a MerchantStringValue message as input and returns a MerchantStringValue message.
+  // The MerchantStringValue message should contain the necessary information to request a password reset for a merchant.
+  // The returned MerchantStringValue message will contain the result of the password reset request.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/request-password-reset" endpoint.
+  // The body of the HTTP request should contain the MerchantStringValue message.
   rpc RequestPasswordReset(MerchantStringValue) returns (MerchantStringValue) {
     option (google.api.http) = {
-      post: "/api/v1/merchants/onboarding/request-password-reset"
+      post: "/api/v1/merchants/request-password-reset"
       body: "*"
     };
   }
 
-  // ResetPassword resets the merchant's password with a new one after they have requested a password reset
+  // ResetPassword is a remote procedure call (RPC) that resets a merchant's password.
+  // It takes a ResetPasswordRequest message as input and returns an AuthMerchantResponse message.
+  // The ResetPasswordRequest message should contain the necessary information to reset a merchant's password.
+  // The AuthMerchantResponse message will contain the authentication details for the merchant after the password reset.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/reset-password" endpoint.
+  // The body of the HTTP request should contain the ResetPasswordRequest message.
   rpc ResetPassword(ResetPasswordRequest) returns (AuthMerchantResponse) {
     option (google.api.http) = {
-      post: "/api/v1/merchants/onboarding/reset-password"
-      body: "*"
-    };
-  }
-
-  rpc UpdateBusinessInfo(UpdateBusinessInfoRequest) returns  (MerchantStringValue) {
-    option (google.api.http) = {
-      put: "/api/v1/merchants/onboarding/businesses/info"
-      body: "*"
-    };
-  }
-
-  rpc AddBusinessContactPerson(AddBusinessContactRequest) returns  (MerchantStringValue) {
-    option (google.api.http) = {
-      post: "/api/v1/merchants/onboarding/businesses/contact"
+      post: "/api/v1/merchants/reset-password"
       body: "*"
     };
   }

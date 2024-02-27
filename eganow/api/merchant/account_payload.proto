@@ -1,0 +1,52 @@
+syntax = "proto3";
+package eganow.api.merchant;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/merchant/onboarding_entity.proto";
+import "google/api/field_behavior.proto";
+
+message UpdateBusinessInfoRequest {
+  message LicenseInfo {
+    string license_number = 1; // license number
+    string issued_date = 2; // date of issue
+    string expiry_date = 3; // date of expiry
+  }
+
+  string name = 1 [(google.api.field_behavior) = REQUIRED]; // name of the business
+  string trading_name = 2 [(google.api.field_behavior) = REQUIRED]; // trading name of the business
+  string postal_zip_code = 3; // postal or zip code
+  string street_address = 4; // street address
+  string city = 5; // city or town
+  string province_state = 6; // province or state or region
+  string digital_address = 7 [(google.api.field_behavior) = REQUIRED]; // digital address
+  string date_of_incorporation = 8 [(google.api.field_behavior) = REQUIRED]; // date of incorporation
+  string industry_id = 9; // ID of business industry
+  string registration_number = 10 [(google.api.field_behavior) = REQUIRED]; // business registration number
+  string email = 11 [(google.api.field_behavior) = REQUIRED]; // business email
+  bool is_regulated = 12; // is the business regulated?
+  string regulator_id = 13 [(google.api.field_behavior) = REQUIRED]; // ID of the regulator
+  CompanyRegistrationType company_registration_type = 14 [(google.api.field_behavior) = REQUIRED]; // type of company registration
+  LicenseInfo license_info = 15 [(google.api.field_behavior) = REQUIRED]; // license information
+  string office_mobile_number = 16 [(google.api.field_behavior) = REQUIRED]; // office mobile number
+  string tax_identification_number = 17 [(google.api.field_behavior) = REQUIRED]; // tax identification number
+  string vat_number = 18 [(google.api.field_behavior) = REQUIRED]; // VAT number
+}
+
+message AddBusinessContactRequest {
+
+  message IdentityDocumentDetails {
+    CustomerIDTypes id_type = 1 [(google.api.field_behavior) = REQUIRED]; // type of ID
+    string id_number = 2 [(google.api.field_behavior) = REQUIRED]; // ID number
+    string id_expiry_date = 3 [(google.api.field_behavior) = REQUIRED]; // ID expiry date
+    string place_of_issue = 4 [(google.api.field_behavior) = REQUIRED]; // place of issue
+    bytes raw_card_image = 5 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the ID card image
+  }
+
+  string email = 1 [(google.api.field_behavior) = REQUIRED]; // email of the contact person
+  string first_name = 2 [(google.api.field_behavior) = REQUIRED]; // first name of the contact person
+  string last_name = 3 [(google.api.field_behavior) = REQUIRED]; // last name of the contact person
+  string mobile_number = 4 [(google.api.field_behavior) = REQUIRED]; // mobile number of the contact person
+  DirectorPosition position = 5 [(google.api.field_behavior) = REQUIRED]; // position of the director
+  IdentityDocumentDetails id_details = 6 [(google.api.field_behavior) = REQUIRED]; // identity document details of the contact person
+}

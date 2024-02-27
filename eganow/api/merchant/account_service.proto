@@ -1,0 +1,25 @@
+syntax = "proto3";
+package eganow.api.merchant;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/merchant/common.proto";
+import "eganow/api/merchant/account_payload.proto";
+import "google/api/annotations.proto";
+
+
+service MerchantAccountSvc {
+  rpc UpdateBusinessInfo(UpdateBusinessInfoRequest) returns  (MerchantStringValue) {
+    option (google.api.http) = {
+      put: "/api/v1/merchants/accounts/info"
+      body: "*"
+    };
+  }
+
+  rpc AddBusinessContactPerson(AddBusinessContactRequest) returns  (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/accounts/contact"
+      body: "*"
+    };
+  }
+}
