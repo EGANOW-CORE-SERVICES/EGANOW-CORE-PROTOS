@@ -42,10 +42,10 @@ client.checkIfMerchantAccountExists(req, (err, res) => {
 4. Log user in with the new password (happens automatically after resetting the password)
 5. `AuthMerchantResponse` will contain the new access token and user details
 
-# Update Business Information for a Merchant
+# Update Business Information for a Merchant (Authorized)
 
 1. Get list of regulators (`MerchantCommonSvc/GetActiveRegulators`)
 2. Get list of sectors (`MerchantCommonSvc/GetBusinessSectors`)
 3. Get list of industries (`MerchantCommonSvc/GetActiveIndustries`)
-4. Provide all required fields in `UpdateBusinessInfoRequest` and call `MerchantOnboardingSvc/UpdateBusinessInfo`
+4. Provide all required fields in `UpdateBusinessInfoRequest` and call `MerchantAccountSvc/UpdateBusinessInfo`
 5. The response will contain the success message, else an error will be thrown
