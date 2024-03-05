@@ -3,12 +3,12 @@ package eganow.api.customer;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-enum CustomerAuthType {
-  CUSTOMER_AUTH_TYPE_UNKNOWN = 0;
-  CUSTOMER_AUTH_TYPE_PASSWORD = 1; // Password-based authentication.
-  CUSTOMER_AUTH_TYPE_PIN = 2; // PIN-based authentication.
-  CUSTOMER_AUTH_TYPE_HASHED_PIN = 3; // Hashed PIN-based authentication.
-}
+//enum CustomerAuthType {
+//  CUSTOMER_AUTH_TYPE_UNKNOWN = 0;
+//  CUSTOMER_AUTH_TYPE_PASSWORD = 1; // Password-based authentication.
+//  CUSTOMER_AUTH_TYPE_PIN = 2; // PIN-based authentication.
+//  CUSTOMER_AUTH_TYPE_HASHED_PIN = 3; // Hashed PIN-based authentication.
+//}
 
 message CustomerAccount {
   string CustomerGuid = 1;
