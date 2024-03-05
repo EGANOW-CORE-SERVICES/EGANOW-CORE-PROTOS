@@ -1,4 +1,0 @@
-syntax = "proto3";
-package eganow.api.customer;
-
-option go_package = "github.com/eganow/core/api;pb";
