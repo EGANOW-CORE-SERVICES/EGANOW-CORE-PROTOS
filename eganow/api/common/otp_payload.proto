@@ -2,6 +2,7 @@ syntax = "proto3";
 package eganow.api.common;
 
 option go_package = "github.com/eganow/core/api;pb";
+import "google/api/field_behavior.proto";
 
 enum OtpGenerationPurpose {
   OTP_GEN_UNSPECIFIED = 0;
@@ -11,8 +12,12 @@ enum OtpGenerationPurpose {
 
 // used when generating OTP
 message SendOTPRequest {
-  string business_email_address = 1;
-  OtpGenerationPurpose purpose = 2;
+  oneof recipient_info {
+    string business_email_address = 1 [(google.api.field_behavior)= REQUIRED];
+    string mobile_number = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  OtpGenerationPurpose purpose = 3;
 }
 
 message VerifyOTPRequest {
