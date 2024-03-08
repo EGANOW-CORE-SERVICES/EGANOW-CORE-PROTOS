@@ -12,7 +12,7 @@ enum OtpGenerationPurpose {
 
 // used when generating OTP
 message SendOTPRequest {
-  oneof recipient_info {
+  oneof otp_recipient_info {
     string business_email_address = 1 [(google.api.field_behavior)= REQUIRED];
     string mobile_number = 2 [(google.api.field_behavior) = REQUIRED];
   }
