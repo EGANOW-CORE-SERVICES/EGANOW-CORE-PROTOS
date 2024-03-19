@@ -36,7 +36,15 @@ message MerchantAccount {
 }
 
 message BusinessContactPerson {
-
+  string ContId = 1;
+  string CustomerGuidProspective = 2;
+  string FirstName = 3;
+  string LastName = 4;
+  string Position = 5;
+  string MobileNumber = 6;
+  string EmailAddress = 7;
+  string MakerId = 8;
+  string MakeDate = 9;
 }
 
 enum CompanyRegistrationType {

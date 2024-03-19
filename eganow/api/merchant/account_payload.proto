@@ -84,6 +84,14 @@ message UpdateBusinessContactRequest {
   string email = 6 [(google.api.field_behavior) = REQUIRED];
 }
 
+message BusinessContactPersonPayload {
+  string first_name = 1; // first name of the contact person
+  string last_name = 2; // last name of the contact person
+  DirectorPosition position = 3; // position of the person
+  string mobile_number = 4; // mobile number of the contact person
+  string email = 5; // email of the contact person
+}
+
 message BusinessContactListResponse {
-  repeated BusinessContactPerson contacts = 1;
+  repeated BusinessContactPersonPayload contacts = 1;
 }
