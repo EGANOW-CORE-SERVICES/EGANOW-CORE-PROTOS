@@ -50,6 +50,19 @@ service MerchantAccountSvc {
     };
   }
 
+  // GetBusinessInfo is a remote procedure call (RPC) that retrieves a merchant's business information.
+  // It takes a MerchantStringValue message as input and returns a BusinessInfoResponse message.
+  // The MerchantStringValue message should contain the necessary information to retrieve a merchant's business information.
+  // The returned BusinessInfoResponse message will contain the business information.
+  //
+  // This RPC is accessible via a HTTP GET request to the "/api/v1/merchants/accounts/info/{value}" endpoint.
+  // The {value} in the URL should be replaced with the actual value from the MerchantStringValue message.
+  rpc GetBusinessInfo(MerchantStringValue) returns (BusinessInfoResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/accounts/info/{value}"
+    };
+  }
+
   // AddBusinessContactPerson is a remote procedure call (RPC) that adds a contact person to a merchant's business.
   // It takes an AddBusinessContactRequest message as input and returns a MerchantStringValue message.
   // The AddBusinessContactRequest message should contain the necessary information to add a contact person to a merchant's business.
@@ -88,6 +101,19 @@ service MerchantAccountSvc {
   rpc DeleteBusinessContactPerson(MerchantStringValue) returns (MerchantStringValue) {
     option (google.api.http) = {
       delete: "/api/v1/merchants/accounts/contact"
+    };
+  }
+
+  // ListBusinessContactPersons is a remote procedure call (RPC) that retrieves a list of contact persons for a merchant's business.
+  // It takes a MerchantStringValue message as input and returns a BusinessContactListResponse message.
+  // The MerchantStringValue message should contain the necessary information to retrieve the contact persons for a merchant's business.
+  // The returned BusinessContactListResponse message will contain the list of contact persons.
+  //
+  // This RPC is accessible via a HTTP GET request to the "/api/v1/merchants/accounts/contact/{value}" endpoint.
+  // The {value} in the URL should be replaced with the actual value from the MerchantStringValue message.
+  rpc ListBusinessContactPersons(MerchantStringValue) returns (BusinessContactListResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/accounts/contact/{value}"
     };
   }
 }

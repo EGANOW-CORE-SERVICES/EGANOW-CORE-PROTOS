@@ -35,6 +35,10 @@ message MerchantAccount {
   string CustomerStatus = 27;
 }
 
+message BusinessContactPerson {
+
+}
+
 enum CompanyRegistrationType {
   COMPANY_REGISTRATION_TYPE_UNKNOWN = 0;
   COMPANY_REGISTRATION_TYPE_BUSINESS = 1;

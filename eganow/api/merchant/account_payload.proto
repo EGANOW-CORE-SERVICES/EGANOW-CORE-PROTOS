@@ -12,6 +12,7 @@ message AddBusinessInfoRequest {
   string city = 5; // city or town
   string province_state = 6; // province or state or region
   string digital_address = 7 [(google.api.field_behavior) = REQUIRED]; // digital address
+  string first_occupancy_date = 10; // first occupancy date
   OfficeOwnership office_ownership = 8 [(google.api.field_behavior) = REQUIRED]; //
   string postal_address = 9 [(google.api.field_behavior) = REQUIRED]; // digital address
   string office_mobile_number = 16 [(google.api.field_behavior) = REQUIRED]; // office mobile number
@@ -44,6 +45,18 @@ message UpdateBusinessInfoRequest {
   string vat_number = 18 [(google.api.field_behavior) = REQUIRED]; // VAT number
 }
 
+message BusinessInfoResponse {
+  string city = 1; // city or town
+  string province_state = 2; // province or state or region
+  string digital_address = 3; // digital address
+  string postal_address = 4; // postal address
+  string postal_zip_code = 5; // postal or zip code
+  string first_occupancy_date = 6; // first occupancy date
+  OfficeOwnership office_ownership = 6; // office ownership
+  string mobile_number = 7; // office mobile number
+  string email = 8; // business email
+}
+
 message AddBusinessContactRequest {
 
   //  message IdentityDocumentDetails {
@@ -69,4 +82,8 @@ message UpdateBusinessContactRequest {
   DirectorPosition position = 4 [(google.api.field_behavior) = REQUIRED];
   string mobile_number = 5 [(google.api.field_behavior) = REQUIRED];
   string email = 6 [(google.api.field_behavior) = REQUIRED];
+}
+
+message BusinessContactListResponse {
+  repeated BusinessContactPerson contacts = 1;
 }
