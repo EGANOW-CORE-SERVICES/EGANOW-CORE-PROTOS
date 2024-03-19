@@ -52,7 +52,7 @@ message BusinessInfoResponse {
   string postal_address = 4; // postal address
   string postal_zip_code = 5; // postal or zip code
   string first_occupancy_date = 6; // first occupancy date
-  OfficeOwnership office_ownership = 6; // office ownership
+  OfficeOwnership office_ownership = 9; // office ownership
   string mobile_number = 7; // office mobile number
   string email = 8; // business email
 }
