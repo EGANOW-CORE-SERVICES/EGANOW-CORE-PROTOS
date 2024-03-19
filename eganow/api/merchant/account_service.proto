@@ -9,6 +9,20 @@ import "google/api/annotations.proto";
 
 
 service MerchantAccountSvc {
+  // AddBusinessInfo is a remote procedure call (RPC) that adds business information for a merchant.
+  // It takes an AddBusinessInfoRequest message as input and returns a MerchantStringValue message.
+  // The AddBusinessInfoRequest message should contain the necessary information to add a business for a merchant.
+  // The MerchantStringValue message will contain the result of the add operation.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/info" endpoint.
+  // The body of the HTTP request should contain the AddBusinessInfoRequest message.
+  rpc AddBusinessInfo(AddBusinessInfoRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/accounts/info"
+      body: "*"
+    };
+  }
+
   // UpdateBusinessInfo is a remote procedure call (RPC) that updates a merchant's business information.
   // It takes an UpdateBusinessInfoRequest message as input and returns a MerchantStringValue message.
   // The UpdateBusinessInfoRequest message should contain the necessary information to update a merchant's business information.
@@ -23,6 +37,19 @@ service MerchantAccountSvc {
     };
   }
 
+  // DeleteBusinessInfo is a remote procedure call (RPC) that deletes a merchant's business information.
+  // It takes a MerchantStringValue message as input and returns a MerchantStringValue message.
+  // The MerchantStringValue message should contain the necessary information to delete a merchant's business information.
+  // The returned MerchantStringValue message will contain the result of the delete operation.
+  //
+  // This RPC is accessible via a HTTP DELETE request to the "/api/v1/merchants/accounts/info" endpoint.
+  // The body of the HTTP request should contain the MerchantStringValue message.
+  rpc DeleteBusinessInfo(MerchantStringValue) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      delete: "/api/v1/merchants/accounts/info"
+    };
+  }
+
   // AddBusinessContactPerson is a remote procedure call (RPC) that adds a contact person to a merchant's business.
   // It takes an AddBusinessContactRequest message as input and returns a MerchantStringValue message.
   // The AddBusinessContactRequest message should contain the necessary information to add a contact person to a merchant's business.
@@ -34,6 +61,33 @@ service MerchantAccountSvc {
     option (google.api.http) = {
       post: "/api/v1/merchants/accounts/contact"
       body: "*"
+    };
+  }
+
+  // UpdateBusinessContactPerson is a remote procedure call (RPC) that updates a contact person's information in a merchant's business.
+  // It takes an UpdateBusinessContactRequest message as input and returns a MerchantStringValue message.
+  // The UpdateBusinessContactRequest message should contain the necessary information to update a contact person's information in a merchant's business.
+  // The MerchantStringValue message will contain the result of the update operation.
+  //
+  // This RPC is accessible via a HTTP PUT request to the "/api/v1/merchants/accounts/contact" endpoint.
+  // The body of the HTTP request should contain the UpdateBusinessContactRequest message.
+  rpc UpdateBusinessContactPerson(UpdateBusinessContactRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      put: "/api/v1/merchants/accounts/contact"
+      body: "*"
+    };
+  }
+
+  // DeleteBusinessContactPerson is a remote procedure call (RPC) that deletes a contact person from a merchant's business.
+  // It takes a MerchantStringValue message as input and returns a MerchantStringValue message.
+  // The MerchantStringValue message should contain the necessary information to delete a contact person from a merchant's business.
+  // The returned MerchantStringValue message will contain the result of the delete operation.
+  //
+  // This RPC is accessible via a HTTP DELETE request to the "/api/v1/merchants/accounts/contact" endpoint.
+  // The body of the HTTP request should contain the MerchantStringValue message.
+  rpc DeleteBusinessContactPerson(MerchantStringValue) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      delete: "/api/v1/merchants/accounts/contact"
     };
   }
 }
