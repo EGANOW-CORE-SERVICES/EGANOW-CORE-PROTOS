@@ -10,3 +10,8 @@ message MerchantStringValue {
   // The string value.
   string value = 1;
 }
+
+message MerchantIntValue {
+  // The int value.
+  int32 value = 1;
+}
