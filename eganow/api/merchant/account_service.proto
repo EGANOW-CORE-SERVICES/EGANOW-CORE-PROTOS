@@ -57,7 +57,7 @@ service MerchantAccountSvc {
   //
   // This RPC is accessible via a HTTP GET request to the "/api/v1/merchants/accounts/info/{value}" endpoint.
   // The {value} in the URL should be replaced with the actual value from the MerchantStringValue message.
-  rpc GetBusinessInfo(MerchantStringValue) returns (BusinessInfoResponse) {
+  rpc GetBusinessInfo(MerchantEmpty) returns (BusinessInfoResponse) {
     option (google.api.http) = {
       get: "/api/v1/merchants/accounts/info/{value}"
     };
@@ -113,7 +113,7 @@ service MerchantAccountSvc {
   // The {value} in the URL should be replaced with the actual value from the MerchantStringValue message.
   rpc ListBusinessContactPersons(MerchantEmpty) returns (BusinessContactListResponse) {
     option (google.api.http) = {
-      get: "/api/v1/merchants/accounts/contact/{value}"
+      get: "/api/v1/merchants/accounts/contact"
     };
   }
 }
