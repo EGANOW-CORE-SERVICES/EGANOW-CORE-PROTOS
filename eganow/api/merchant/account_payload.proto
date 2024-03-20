@@ -90,6 +90,7 @@ message BusinessContactPersonPayload {
   DirectorPosition position = 3; // position of the person
   string mobile_number = 4; // mobile number of the contact person
   string email = 5; // email of the contact person
+  string contact_id = 6; // ID of the contact person
 }
 
 message BusinessContactListResponse {
