@@ -12,9 +12,9 @@ message AddBusinessInfoRequest {
   string city = 5; // city or town
   string province_state = 6; // province or state or region
   string digital_address = 7 [(google.api.field_behavior) = REQUIRED]; // digital address
-  string first_occupancy_date = 10; // first occupancy date
+  string first_occupancy_date = 10 [(google.api.field_behavior) = REQUIRED]; // first occupancy date
   OfficeOwnership office_ownership = 8 [(google.api.field_behavior) = REQUIRED]; //
-  string postal_address = 9 [(google.api.field_behavior) = REQUIRED]; // digital address
+  string postal_address = 9 [(google.api.field_behavior) = REQUIRED]; // postal address
   string office_mobile_number = 16 [(google.api.field_behavior) = REQUIRED]; // office mobile number
 }
 
