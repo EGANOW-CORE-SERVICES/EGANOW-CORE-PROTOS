@@ -3,7 +3,6 @@ package eganow.api.media;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-import "google/api/annotations.proto";
 import "eganow/api/media/common.proto";
 import "eganow/api/media/media_payload.proto";
 
