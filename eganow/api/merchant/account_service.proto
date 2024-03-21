@@ -93,8 +93,8 @@ service MerchantAccountSvc {
   // The MerchantStringValue message will contain the result of the add operation.
   //
   // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/contact-person" endpoint.
-  // The body of the HTTP request should contain the AddBusinessContactRequest message.
-  rpc AddBusinessContactPerson(AddBusinessContactRequest) returns  (MerchantStringValue) {
+  // The body of the HTTP request should contain the AddBusinessContactPersonRequest message.
+  rpc AddBusinessContactPerson(AddBusinessContactPersonRequest) returns  (MerchantStringValue) {
     option (google.api.http) = {
       post: "/api/v1/merchants/accounts/contact-person"
       body: "*"
@@ -107,8 +107,8 @@ service MerchantAccountSvc {
   // The MerchantStringValue message will contain the result of the update operation.
   //
   // This RPC is accessible via a HTTP PUT request to the "/api/v1/merchants/accounts/contact-person" endpoint.
-  // The body of the HTTP request should contain the UpdateBusinessContactRequest message.
-  rpc UpdateBusinessContactPerson(UpdateBusinessContactRequest) returns (MerchantStringValue) {
+  // The body of the HTTP request should contain the UpdateBusinessContactPersonRequest message.
+  rpc UpdateBusinessContactPerson(UpdateBusinessContactPersonRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
       put: "/api/v1/merchants/accounts/contact-person"
       body: "*"

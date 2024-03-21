@@ -92,7 +92,7 @@ message BusinessContactInfoResponse {
   string email = 8; // business email
 }
 
-message AddBusinessContactRequest {
+message AddBusinessContactPersonRequest {
 
   //  message IdentityDocumentDetails {
   //    CustomerIDTypes id_type = 1 [(google.api.field_behavior) = REQUIRED]; // type of ID
@@ -110,7 +110,7 @@ message AddBusinessContactRequest {
   //  IdentityDocumentDetails id_details = 6 [(google.api.field_behavior) = REQUIRED]; // identity document details of the contact person
 }
 
-message UpdateBusinessContactRequest {
+message UpdateBusinessContactPersonRequest {
   int32 contact_id = 1 [(google.api.field_behavior) = REQUIRED];
   string first_name = 2 [(google.api.field_behavior) = REQUIRED];
   string last_name = 3 [(google.api.field_behavior) = REQUIRED];
