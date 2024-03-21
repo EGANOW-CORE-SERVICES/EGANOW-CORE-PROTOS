@@ -46,8 +46,7 @@ message AuthMerchantResponse {
   string full_name = 2; // full name of the merchant
   string first_name = 3; // first name of the merchant
   string last_name = 4; // last name of the merchant
-  string business_name = 5; // business name of the merchant
-  string merchant_id = 7; // unique identifier for the merchant
+  string company_name = 5; // company name of the merchant
   string profile_picture = 8; // URL to the profile picture of the merchant (if any)
   string email = 9; // email of the merchant
   string mobile_number = 10; // mobile number of the merchant
