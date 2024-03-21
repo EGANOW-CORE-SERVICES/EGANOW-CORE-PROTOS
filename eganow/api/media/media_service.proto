@@ -8,21 +8,6 @@ import "eganow/api/media/common.proto";
 import "eganow/api/media/media_payload.proto";
 
 service MediaSvc {
-  // UploadMedia is a remote procedure call (RPC) that uploads media for a user.
-  // It takes a MediaUploadRequest message as input and returns a MediaStringValue message (containing the media
-  // download url).
-  // The MediaUploadRequest message should contain the necessary information to upload a media file.
-  // The MediaStringValue message will contain the result of the upload operation.
-  //
-  // This RPC is accessible via a HTTP POST request to the "/api/v1/media/upload" endpoint.
-  // The body of the HTTP request should contain the MediaUploadRequest message.
-  rpc UploadMedia(MediaUploadRequest) returns (MediaStringValue) {
-    option (google.api.http) = {
-      post: "/api/v1/media/upload"
-      body: "*"
-    };
-  }
-
   // UploadMediaStream is a remote procedure call (RPC) that uploads media for a user in a streaming manner.
   // It takes a stream of MediaUploadRequest messages as input and returns a MediaStringValue message.
   // Each MediaUploadRequest message in the stream should contain a part of the media file to be uploaded.
