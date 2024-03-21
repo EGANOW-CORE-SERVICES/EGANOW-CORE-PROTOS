@@ -1,0 +1,19 @@
+syntax = "proto3";
+package eganow.api.media;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+message MediaUploadRequest {
+  enum MediaType {
+    MEDIA_TYPE_UNSPECIFIED = 0;
+    MEDIA_TYPE_IMAGE = 1; // jpg, png, etc.
+    MEDIA_TYPE_VIDEO = 2; // mp4, avi, etc.
+    MEDIA_TYPE_DOCUMENT = 3; // pdf, doc, etc.
+  }
+
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+  bytes data = 2 [(google.api.field_behavior) = REQUIRED]; // Base64 encoded string / byte array
+  MediaType type = 3 [(google.api.field_behavior) = REQUIRED];
+}

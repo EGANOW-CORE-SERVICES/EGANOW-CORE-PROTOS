@@ -9,20 +9,6 @@ import "google/api/annotations.proto";
 
 
 service MerchantAccountSvc {
-  // AddBusinessInfo is a remote procedure call (RPC) that adds business information for a merchant.
-  // It takes an AddBusinessInfoRequest message as input and returns a MerchantStringValue message.
-  // The AddBusinessInfoRequest message should contain the necessary information to add a business for a merchant.
-  // The MerchantStringValue message will contain the result of the add operation.
-  //
-  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/info" endpoint.
-  // The body of the HTTP request should contain the AddBusinessInfoRequest message.
-  rpc AddBusinessInfo(AddBusinessInfoRequest) returns (MerchantStringValue) {
-    option (google.api.http) = {
-      post: "/api/v1/merchants/accounts/info"
-      body: "*"
-    };
-  }
-
   // GetBusinessInfo is a remote procedure call (RPC) that retrieves business information for a merchant.
   // It takes a MerchantEmpty message as input and returns a BusinessInfoResponse message.
   // The BusinessInfoResponse message will contain the business information of the merchant.
