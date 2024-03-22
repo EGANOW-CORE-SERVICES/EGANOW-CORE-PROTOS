@@ -12,20 +12,6 @@ message BusinessLicenseInfo {
   string expiry_date = 3; // date of expiry (YYYY-MM-DD)
 }
 
-message AddBusinessInfoRequest {
-  string name = 1 [(google.api.field_behavior) = REQUIRED]; // name of the business
-  string trading_name = 2 [(google.api.field_behavior) = REQUIRED]; // trading name of the business
-  string date_of_incorporation = 8 [(google.api.field_behavior) = REQUIRED]; // date of incorporation (YYYY-MM-DD)
-  string industry_id = 9; // ID of business industry
-  string company_registration_number = 10 [(google.api.field_behavior) = REQUIRED]; // business registration number
-  string email = 11 [(google.api.field_behavior) = REQUIRED]; // business email
-  string regulator_id = 13 [(google.api.field_behavior) = REQUIRED]; // ID of the regulator
-  CompanyRegistrationType company_registration_type = 14 [(google.api.field_behavior) = REQUIRED]; // type of company registration
-  BusinessLicenseInfo license_info = 15 [(google.api.field_behavior) = REQUIRED]; // license information
-  string tax_identification_number = 17 [(google.api.field_behavior) = REQUIRED]; // tax identification number
-  string vat_number = 18 [(google.api.field_behavior) = REQUIRED]; // VAT number
-}
-
 message UpdateBusinessInfoRequest  {
   string name = 1 [(google.api.field_behavior) = REQUIRED]; // name of the business
   string trading_name = 2 [(google.api.field_behavior) = REQUIRED]; // trading name of the business
