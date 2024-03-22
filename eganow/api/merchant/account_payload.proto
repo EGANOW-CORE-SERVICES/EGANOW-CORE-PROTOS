@@ -22,7 +22,6 @@ message AddBusinessInfoRequest {
   string regulator_id = 13 [(google.api.field_behavior) = REQUIRED]; // ID of the regulator
   CompanyRegistrationType company_registration_type = 14 [(google.api.field_behavior) = REQUIRED]; // type of company registration
   BusinessLicenseInfo license_info = 15 [(google.api.field_behavior) = REQUIRED]; // license information
-  string office_mobile_number = 16 [(google.api.field_behavior) = REQUIRED]; // office mobile number
   string tax_identification_number = 17 [(google.api.field_behavior) = REQUIRED]; // tax identification number
   string vat_number = 18 [(google.api.field_behavior) = REQUIRED]; // VAT number
 }
@@ -37,7 +36,6 @@ message UpdateBusinessInfoRequest  {
   string regulator_id = 13 [(google.api.field_behavior) = REQUIRED]; // ID of the regulator
   CompanyRegistrationType company_registration_type = 14 [(google.api.field_behavior) = REQUIRED]; // type of company registration
   BusinessLicenseInfo license_info = 15 [(google.api.field_behavior) = REQUIRED]; // license information
-  string office_mobile_number = 16 [(google.api.field_behavior) = REQUIRED]; // office mobile number
   string tax_identification_number = 17 [(google.api.field_behavior) = REQUIRED]; // tax identification number
   string vat_number = 18 [(google.api.field_behavior) = REQUIRED]; // VAT number
 }
