@@ -109,4 +109,30 @@ service MerchantAccountSvc {
       get: "/api/v1/merchants/accounts/contact-person"
     };
   }
+
+  rpc AddDirectorShareholder(AddDirectorShareholderRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/accounts/director-shareholder"
+      body: "*"
+    };
+  }
+
+  rpc UpdateDirectorShareholder(UpdateDirectorShareholderRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      put: "/api/v1/merchants/accounts/director-shareholder"
+      body: "*"
+    };
+  }
+
+  rpc DeleteDirectorShareholder(MerchantIntValue) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      delete: "/api/v1/merchants/accounts/director-shareholder/{value}"
+    };
+  }
+
+  rpc ListDirectorShareholders(MerchantEmpty) returns (DirectorShareholderListResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/accounts/director-shareholder"
+    };
+  }
 }

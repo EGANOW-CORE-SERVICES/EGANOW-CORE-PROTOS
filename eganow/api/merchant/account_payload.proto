@@ -12,6 +12,13 @@ message BusinessLicenseInfo {
   string expiry_date = 3; // date of expiry (YYYY-MM-DD)
 }
 
+message DirectorShareholderIDInfo {
+  string id_number = 1; // ID number
+  string id_expiry_date = 2; // ID expiry date (YYYY-MM-DD)
+  string place_of_issue = 3; // place of issue
+  CustomerIDTypes id_type = 4; // type of ID
+}
+
 message UpdateBusinessInfoRequest  {
   string name = 1 [(google.api.field_behavior) = REQUIRED]; // name of the business
   string trading_name = 2 [(google.api.field_behavior) = REQUIRED]; // trading name of the business
@@ -117,4 +124,41 @@ message BusinessContactPersonPayload {
 
 message BusinessContactListResponse {
   repeated BusinessContactPersonPayload contacts = 1;
+}
+
+message AddDirectorShareholderRequest {
+  string first_name = 1 [(google.api.field_behavior) = REQUIRED]; // first name of the director
+  string last_name = 2 [(google.api.field_behavior) = REQUIRED]; // last name of the director
+  string mobile_number = 3 [(google.api.field_behavior) = REQUIRED]; // mobile number of the director
+  string email = 4 [(google.api.field_behavior) = REQUIRED]; // email of the director
+  DirectorPosition position = 5 [(google.api.field_behavior) = REQUIRED]; // position of the director
+  DirectorOrShareholderOrOtherType director_shareholder_type = 6 [(google.api.field_behavior) = REQUIRED]; // type of director
+  DirectorShareholderIDInfo id_info = 7 [(google.api.field_behavior) = REQUIRED]; // ID information of the director
+}
+
+message UpdateDirectorShareholderRequest {
+  int32 director_id = 1 [(google.api.field_behavior) = REQUIRED]; // ID of the director
+  string first_name = 2 [(google.api.field_behavior) = REQUIRED]; // first name of the director
+  string last_name = 3 [(google.api.field_behavior) = REQUIRED]; // last name of the director
+  string mobile_number = 4 [(google.api.field_behavior) = REQUIRED]; // mobile number of the director
+  string email = 5 [(google.api.field_behavior) = REQUIRED]; // email of the director
+  DirectorPosition position = 6 [(google.api.field_behavior) = REQUIRED]; // position of the director
+  DirectorOrShareholderOrOtherType director_shareholder_type = 7 [(google.api.field_behavior) = REQUIRED]; // type of director
+  DirectorShareholderIDInfo id_info = 8 [(google.api.field_behavior) = REQUIRED]; // ID information of the director
+}
+
+message DirectorShareholderPayload {
+  string first_name = 1; // first name of the director
+  string last_name = 2; // last name of the director
+  string mobile_number = 3; // mobile number of the director
+  string email = 4; // email of the director
+  DirectorPosition position = 5; // position of the director
+  DirectorOrShareholderOrOtherType director_shareholder_type = 6; // type of director
+  DirectorShareholderIDInfo id_info = 7; // ID information of the director
+  int32 director_id = 8; // ID of the director
+  bool passed_aml_check = 9; // passed AML check
+}
+
+message DirectorShareholderListResponse {
+  repeated DirectorShareholderPayload directors_shareholders = 1;
 }
