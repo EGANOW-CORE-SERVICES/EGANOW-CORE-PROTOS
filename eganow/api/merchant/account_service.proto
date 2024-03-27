@@ -34,20 +34,6 @@ service MerchantAccountSvc {
     };
   }
 
-  // AddBusinessContactInfo is a remote procedure call (RPC) that adds business information for a merchant.
-  // It takes an AddBusinessInfoRequest message as input and returns a MerchantStringValue message.
-  // The AddBusinessInfoRequest message should contain the necessary information to add a business for a merchant.
-  // The MerchantStringValue message will contain the result of the add operation.
-  //
-  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/info" endpoint.
-  // The body of the HTTP request should contain the AddBusinessInfoRequest message.
-  rpc AddBusinessContactInfo(AddBusinessContactInfoRequest) returns (MerchantStringValue) {
-    option (google.api.http) = {
-      post: "/api/v1/merchants/accounts/contact-info"
-      body: "*"
-    };
-  }
-
   // UpdateBusinessContactInfo is a remote procedure call (RPC) that updates a merchant's business information.
   // It takes an UpdateBusinessInfoRequest message as input and returns a MerchantStringValue message.
   // The UpdateBusinessInfoRequest message should contain the necessary information to update a merchant's business information.
