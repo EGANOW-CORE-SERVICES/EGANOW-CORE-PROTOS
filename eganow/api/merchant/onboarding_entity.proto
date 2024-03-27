@@ -77,7 +77,8 @@ enum CustomerIDTypes {
 enum OfficeOwnership {
   OFFICE_OWNERSHIP_UNKNOWN = 0;
   OFFICE_OWNERSHIP_OWNED = 1;
-  OFFICE_OWNERSHIP_RENTED = 2;
+  OFFICE_OWNERSHIP_RENT = 2;
+  OFFICE_OWNERSHIP_LEASED = 3;
 }
 
 enum BusinessCustomerPortalStatus {
