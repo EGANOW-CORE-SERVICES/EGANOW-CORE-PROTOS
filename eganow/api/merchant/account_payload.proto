@@ -84,6 +84,7 @@ message BusinessContactInfoResponse {
   OfficeOwnership office_ownership = 9; // office ownership
   string mobile_number = 7; // office mobile number
   string email = 8; // business email
+  string street_address = 10; // street address
 }
 
 message AddBusinessContactPersonRequest {
