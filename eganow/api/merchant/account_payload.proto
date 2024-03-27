@@ -38,6 +38,8 @@ message BusinessInfoResponse {
   string tax_identification_number = 17; // tax identification number
   string vat_number = 18; // VAT number
   string profile_picture = 19; // profile picture
+  string industry_id = 20; // ID of business industry
+  string industry_name = 21; // name of business industry
 }
 
 message AddBusinessContactInfoRequest {
