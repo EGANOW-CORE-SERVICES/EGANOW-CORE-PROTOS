@@ -40,6 +40,7 @@ message BusinessInfoResponse {
   string profile_picture = 19; // profile picture
   string industry_id = 20; // ID of business industry
   string industry_name = 21; // name of business industry
+  bool allow_for_edit = 22; // allow this business entity to be edit from client-side
 }
 
 message AddBusinessContactInfoRequest {
