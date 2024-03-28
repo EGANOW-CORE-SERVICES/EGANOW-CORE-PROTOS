@@ -19,6 +19,7 @@ message DirectorShareholderIDInfo {
   CustomerIDTypes id_type = 4 [(google.api.field_behavior) = REQUIRED]; // type of ID
   bytes id_front_image = 5 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the ID front image
   bytes id_back_image = 6; // bytes/bas64 string of the ID back image
+  bytes portrait_image = 7 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the portrait image
 }
 
 message UpdateBusinessInfoRequest  {
