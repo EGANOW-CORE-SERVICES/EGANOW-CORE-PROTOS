@@ -124,7 +124,7 @@ service MerchantAccountSvc {
     };
   }
 
-  rpc DeleteDirectorShareholder(MerchantIntValue) returns (MerchantStringValue) {
+  rpc DeleteDirectorShareholder(MerchantStringValue) returns (MerchantStringValue) {
     option (google.api.http) = {
       delete: "/api/v1/merchants/accounts/director-shareholder/{value}"
     };

@@ -158,7 +158,7 @@ message DirectorShareholderPayload {
   DirectorPosition position = 5; // position of the director
   DirectorOrShareholderOrOtherType director_shareholder_type = 6; // type of director
   DirectorShareholderIDInfo id_info = 7; // ID information of the director
-  int32 director_id = 8; // ID of the director
+  string director_id = 8; // ID of the director
   bool passed_aml_check = 9; // passed AML check
 }
 
