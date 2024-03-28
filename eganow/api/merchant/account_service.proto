@@ -92,7 +92,7 @@ service MerchantAccountSvc {
   //
   // This RPC is accessible via a HTTP DELETE request to the "/api/v1/merchants/accounts/contact-person" endpoint.
   // The body of the HTTP request should contain the MerchantStringValue message.
-  rpc DeleteBusinessContactPerson(MerchantIntValue) returns (MerchantStringValue) {
+  rpc DeleteBusinessContactPerson(MerchantStringValue) returns (MerchantStringValue) {
     option (google.api.http) = {
       delete: "/api/v1/merchants/accounts/contact-person/{value}"
     };
