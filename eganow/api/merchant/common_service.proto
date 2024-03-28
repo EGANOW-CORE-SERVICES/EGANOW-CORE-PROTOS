@@ -15,15 +15,9 @@ service MerchantCommonSvc {
     };
   }
 
-  rpc GetBusinessSectors(MerchantEmpty) returns (MerchantBusinessSectorList) {
+  rpc GetActiveIndustries(MerchantEmpty) returns  (MerchantIndustryList) {
     option (google.api.http) = {
-      get: "/api/v1/merchants/common/business-sectors"
-    };
-  }
-
-  rpc GetActiveIndustries(MerchantStringValue) returns  (MerchantIndustryList) {
-    option (google.api.http) = {
-      get: "/api/v1/merchants/common/business-sectors/{value}/industries"
+      get: "/api/v1/merchants/common/industries"
     };
   }
 
