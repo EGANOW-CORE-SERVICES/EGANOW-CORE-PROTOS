@@ -13,10 +13,12 @@ message BusinessLicenseInfo {
 }
 
 message DirectorShareholderIDInfo {
-  string id_number = 1; // ID number
-  string id_expiry_date = 2; // ID expiry date (YYYY-MM-DD)
-  string place_of_issue = 3; // place of issue
-  CustomerIDTypes id_type = 4; // type of ID
+  string id_number = 1 [(google.api.field_behavior) = REQUIRED]; // ID number
+  string id_expiry_date = 2 [(google.api.field_behavior) = REQUIRED]; // ID expiry date (YYYY-MM-DD)
+  string place_of_issue = 3 [(google.api.field_behavior) = REQUIRED]; // place of issue
+  CustomerIDTypes id_type = 4 [(google.api.field_behavior) = REQUIRED]; // type of ID
+  bytes id_front_image = 5 [(google.api.field_behavior) = REQUIRED]; // bytes/bas64 string of the ID front image
+  bytes id_back_image = 6; // bytes/bas64 string of the ID back image
 }
 
 message UpdateBusinessInfoRequest  {
