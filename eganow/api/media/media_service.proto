@@ -15,4 +15,5 @@ service MediaSvc {
   // This RPC is designed for handling large media files that may not fit into a single MediaUploadRequest message.
   // The client should split the media file into chunks, wrap each chunk in a MediaUploadRequest message, and send them as a stream.
   rpc UploadMediaStream(stream MediaUploadRequest) returns (MediaStringValue);
+  rpc UploadMedia(MediaUploadRequest) returns (MediaStringValue);
 }
