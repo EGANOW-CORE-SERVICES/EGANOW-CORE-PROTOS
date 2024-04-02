@@ -124,6 +124,13 @@ service MerchantAccountSvc {
     };
   }
 
+  rpc UpdateImagesForDirectorShareholder(UpdateImagesForDirectorShareholderRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      put: "/api/v1/merchants/accounts/director-shareholder/images"
+      body: "*"
+    };
+  }
+
   rpc DeleteDirectorShareholder(MerchantStringValue) returns (MerchantStringValue) {
     option (google.api.http) = {
       delete: "/api/v1/merchants/accounts/director-shareholder/{value}"

@@ -141,14 +141,18 @@ message AddDirectorShareholderRequest {
 }
 
 message UpdateDirectorShareholderRequest {
-  int32 director_id = 1 [(google.api.field_behavior) = REQUIRED]; // ID of the director
+  string director_id = 1 [(google.api.field_behavior) = REQUIRED]; // ID of the director
   string first_name = 2 [(google.api.field_behavior) = REQUIRED]; // first name of the director
   string last_name = 3 [(google.api.field_behavior) = REQUIRED]; // last name of the director
   string mobile_number = 4 [(google.api.field_behavior) = REQUIRED]; // mobile number of the director
   string email = 5 [(google.api.field_behavior) = REQUIRED]; // email of the director
   DirectorPosition position = 6 [(google.api.field_behavior) = REQUIRED]; // position of the director
   DirectorOrShareholderOrOtherType director_shareholder_type = 7 [(google.api.field_behavior) = REQUIRED]; // type of director
-  DirectorShareholderIDInfo id_info = 8 [(google.api.field_behavior) = REQUIRED]; // ID information of the director
+}
+
+message UpdateImagesForDirectorShareholderRequest {
+  string director_id = 1 [(google.api.field_behavior) = REQUIRED]; // ID of the director
+  DirectorShareholderIDInfo id_info = 2 [(google.api.field_behavior) = REQUIRED]; // ID information of the director
 }
 
 message DirectorShareholderPayload {
