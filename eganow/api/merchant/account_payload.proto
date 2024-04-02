@@ -109,7 +109,7 @@ message AddBusinessContactPersonRequest {
 }
 
 message UpdateBusinessContactPersonRequest {
-  int32 contact_id = 1 [(google.api.field_behavior) = REQUIRED];
+  string contact_id = 1 [(google.api.field_behavior) = REQUIRED];
   string first_name = 2 [(google.api.field_behavior) = REQUIRED];
   string last_name = 3 [(google.api.field_behavior) = REQUIRED];
   DirectorPosition position = 4 [(google.api.field_behavior) = REQUIRED];
