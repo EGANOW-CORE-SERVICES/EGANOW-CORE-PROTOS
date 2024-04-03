@@ -110,6 +110,13 @@ service MerchantAccountSvc {
     };
   }
 
+  // AddDirectorShareholder is a remote procedure call (RPC) that adds a director or shareholder to a merchant's business.
+  // It takes an AddDirectorShareholderRequest message as input and returns a MerchantStringValue message.
+  // The AddDirectorShareholderRequest message should contain the necessary information to add a director or shareholder to a merchant's business.
+  // The MerchantStringValue message will contain the result of the add operation.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/director-shareholder" endpoint.
+  // The body of the HTTP request should contain the AddDirectorShareholderRequest message.
   rpc AddDirectorShareholder(AddDirectorShareholderRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
       post: "/api/v1/merchants/accounts/director-shareholder"
@@ -117,6 +124,13 @@ service MerchantAccountSvc {
     };
   }
 
+  // UpdateDirectorShareholder is a remote procedure call (RPC) that updates a director or shareholder in a merchant's business.
+  // It takes an UpdateDirectorShareholderRequest message as input and returns a MerchantStringValue message.
+  // The UpdateDirectorShareholderRequest message should contain the necessary information to update a director or shareholder in a merchant's business.
+  // The MerchantStringValue message will contain the result of the update operation.
+  //
+  // This RPC is accessible via a HTTP PUT request to the "/api/v1/merchants/accounts/director-shareholder" endpoint.
+  // The body of the HTTP request should contain the UpdateDirectorShareholderRequest message.
   rpc UpdateDirectorShareholder(UpdateDirectorShareholderRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
       put: "/api/v1/merchants/accounts/director-shareholder"
@@ -124,18 +138,37 @@ service MerchantAccountSvc {
     };
   }
 
+  // DeleteDirectorShareholder is a remote procedure call (RPC) that deletes a director or shareholder from a merchant's business.
+  // It takes a MerchantStringValue message as input and returns a MerchantStringValue message.
+  // The MerchantStringValue message should contain the necessary information to delete a director or shareholder from a merchant's business.
+  // The returned MerchantStringValue message will contain the result of the delete operation.
+  //
+  // This RPC is accessible via a HTTP DELETE request to the "/api/v1/merchants/accounts/director-shareholder/{value}" endpoint.
+  // The {value} in the URL should be replaced with the actual value from the MerchantStringValue message.
   rpc DeleteDirectorShareholder(MerchantStringValue) returns (MerchantStringValue) {
     option (google.api.http) = {
       delete: "/api/v1/merchants/accounts/director-shareholder/{value}"
     };
   }
 
+  // ListDirectorShareholders is a remote procedure call (RPC) that retrieves a list of directors or shareholders from a merchant's business.
+  // It takes a MerchantEmpty message as input and returns a DirectorShareholderListResponse message.
+  // The DirectorShareholderListResponse message will contain the list of directors or shareholders.
+  //
+  // This RPC is accessible via a HTTP GET request to the "/api/v1/merchants/accounts/director-shareholder" endpoint.
   rpc ListDirectorShareholders(MerchantEmpty) returns (DirectorShareholderListResponse) {
     option (google.api.http) = {
       get: "/api/v1/merchants/accounts/director-shareholder"
     };
   }
 
+  // AddBusinessDocument is a remote procedure call (RPC) that adds a business document to a merchant's account.
+  // It takes an AddBusinessDocumentRequest message as input and returns a MerchantStringValue message.
+  // The AddBusinessDocumentRequest message should contain the necessary information to add a business document to a merchant's account.
+  // The MerchantStringValue message will contain the result of the add operation.
+  //
+  // This RPC is accessible via a HTTP POST request to the "/api/v1/merchants/accounts/documents" endpoint.
+  // The body of the HTTP request should contain the AddBusinessDocumentRequest message.
   rpc AddBusinessDocument(AddBusinessDocumentRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
       post: "/api/v1/merchants/accounts/documents"
@@ -143,6 +176,13 @@ service MerchantAccountSvc {
     };
   }
 
+  // UpdateBusinessDocument is a remote procedure call (RPC) that updates a business document in a merchant's account.
+  // It takes an UpdateBusinessDocumentRequest message as input and returns a MerchantStringValue message.
+  // The UpdateBusinessDocumentRequest message should contain the necessary information to update a business document in a merchant's account.
+  // The MerchantStringValue message will contain the result of the update operation.
+  //
+  // This RPC is accessible via a HTTP PUT request to the "/api/v1/merchants/accounts/documents" endpoint.
+  // The body of the HTTP request should contain the UpdateBusinessDocumentRequest message.
   rpc UpdateBusinessDocument(UpdateBusinessDocumentRequest) returns (MerchantStringValue) {
     option (google.api.http) = {
       put: "/api/v1/merchants/accounts/documents"
@@ -150,12 +190,24 @@ service MerchantAccountSvc {
     };
   }
 
+  // DeleteBusinessDocument is a remote procedure call (RPC) that deletes a business document from a merchant's account.
+  // It takes a MerchantIntValue message as input and returns a MerchantStringValue message.
+  // The MerchantIntValue message should contain the necessary information to delete a business document from a merchant's account.
+  // The returned MerchantStringValue message will contain the result of the delete operation.
+  //
+  // This RPC is accessible via a HTTP DELETE request to the "/api/v1/merchants/accounts/documents/{value}" endpoint.
+  // The {value} in the URL should be replaced with the actual value from the MerchantIntValue message.
   rpc DeleteBusinessDocument(MerchantIntValue) returns (MerchantStringValue) {
     option (google.api.http) = {
       delete: "/api/v1/merchants/accounts/documents/{value}"
     };
   }
 
+  // ListBusinessDocuments is a remote procedure call (RPC) that retrieves a list of business documents from a merchant's account.
+  // It takes a MerchantEmpty message as input and returns a BusinessDocumentListResponse message.
+  // The BusinessDocumentListResponse message will contain the list of business documents.
+  //
+  // This RPC is accessible via a HTTP GET request to the "/api/v1/merchants/accounts/documents" endpoint.
   rpc ListBusinessDocuments(MerchantEmpty) returns (BusinessDocumentListResponse) {
     option (google.api.http) = {
       get: "/api/v1/merchants/accounts/documents"
