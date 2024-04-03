@@ -7,13 +7,5 @@ import "eganow/api/media/common.proto";
 import "eganow/api/media/media_payload.proto";
 
 service MediaSvc {
-  // UploadMediaStream is a remote procedure call (RPC) that uploads media for a user in a streaming manner.
-  // It takes a stream of MediaUploadRequest messages as input and returns a MediaStringValue message.
-  // Each MediaUploadRequest message in the stream should contain a part of the media file to be uploaded.
-  // The MediaStringValue message will contain the result of the upload operation.
-  //
-  // This RPC is designed for handling large media files that may not fit into a single MediaUploadRequest message.
-  // The client should split the media file into chunks, wrap each chunk in a MediaUploadRequest message, and send them as a stream.
-  rpc UploadMediaStream(stream MediaUploadRequest) returns (MediaStringValue);
   rpc UploadMedia(MediaUploadRequest) returns (MediaStringValue);
 }
