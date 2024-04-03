@@ -176,3 +176,24 @@ message DirectorShareholderPayload {
 message DirectorShareholderListResponse {
   repeated DirectorShareholderPayload directors_shareholders = 1;
 }
+
+message AddBusinessDocumentRequest {
+  bytes doc_image = 1 [(google.api.field_behavior) = REQUIRED];
+  string name = 2; // a short description of what the image is about (e.g. business certificate)
+}
+
+message UpdateBusinessDocumentRequest {
+  int32 doc_id = 1;
+  bytes doc_image = 2 [(google.api.field_behavior) = REQUIRED];
+  string name = 3; // a short description of what the image is about (e.g. business certificate)
+}
+
+message BusinessDocumentPayload {
+  string url = 1;
+  string name = 2;
+  int32 doc_id = 3;
+}
+
+message BusinessDocumentListResponse {
+  repeated BusinessDocumentPayload documents = 1;
+}

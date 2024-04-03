@@ -135,4 +135,30 @@ service MerchantAccountSvc {
       get: "/api/v1/merchants/accounts/director-shareholder"
     };
   }
+
+  rpc AddBusinessDocument(AddBusinessDocumentRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      post: "/api/v1/merchants/accounts/documents"
+      body: "*"
+    };
+  }
+
+  rpc UpdateBusinessDocument(UpdateBusinessDocumentRequest) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      put: "/api/v1/merchants/accounts/documents"
+      body: "*"
+    };
+  }
+
+  rpc DeleteBusinessDocument(MerchantIntValue) returns (MerchantStringValue) {
+    option (google.api.http) = {
+      delete: "/api/v1/merchants/accounts/documents/{value}"
+    };
+  }
+
+  rpc ListBusinessDocuments(MerchantEmpty) returns (BusinessDocumentListResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/merchants/accounts/documents"
+    };
+  }
 }
