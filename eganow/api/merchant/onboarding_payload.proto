@@ -4,6 +4,7 @@ package eganow.api.merchant;
 option go_package = "github.com/eganow/core/api;pb";
 
 import "google/api/field_behavior.proto";
+import "eganow/api/merchant/onboarding_entity.proto";
 
 message CreateMerchantRequest {
 
@@ -50,6 +51,7 @@ message AuthMerchantResponse {
   string profile_picture = 8; // URL to the profile picture of the merchant (if any)
   string email = 9; // email of the merchant
   string mobile_number = 10; // mobile number of the merchant
+  CustomerStatus status = 11; // status of the merchant
 }
 
 message ResetPasswordRequest {
