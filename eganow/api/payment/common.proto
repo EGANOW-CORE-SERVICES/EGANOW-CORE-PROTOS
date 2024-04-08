@@ -1,0 +1,12 @@
+syntax = "proto3";
+package eganow.api.payment;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+message EgaPayEmpty {}
+
+// The JSON representation for `StringValue` is JSON string.
+message EgaPayStringValue {
+  // The string value.
+  string value = 1;
+}

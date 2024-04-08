@@ -1,0 +1,17 @@
+syntax = "proto3";
+package eganow.api.payment;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+enum EgaPayTransactionStatus {
+  PENDING = 0;
+  SUCCESSFUL = 1;
+  FAILED = 2;
+}
+
+enum EgaPayTransactionType {
+  DR = 0;
+  CR = 1;
+}
