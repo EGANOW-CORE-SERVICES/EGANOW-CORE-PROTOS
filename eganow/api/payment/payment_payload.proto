@@ -52,9 +52,9 @@ message TransferRequest {
   string TransactionId = 5 [(google.api.field_behavior) = REQUIRED];
   string Narration = 6 [(google.api.field_behavior) = REQUIRED];
   string TransCurrencyIso = 7 [(google.api.field_behavior) = REQUIRED];
-  string ExpiryDateMonth = 8 [(google.api.field_behavior) = REQUIRED];
-  string ExpiryDateYear = 9 [(google.api.field_behavior) = REQUIRED];
-  string Cvv = 10 [(google.api.field_behavior) = REQUIRED];
+  int32 ExpiryDateMonth = 8 [(google.api.field_behavior) = REQUIRED];
+  int32 ExpiryDateYear = 9 [(google.api.field_behavior) = REQUIRED];
+  int32 Cvv = 10 [(google.api.field_behavior) = REQUIRED];
   string LanguageId = 11 [(google.api.field_behavior) = REQUIRED];
 }
 
