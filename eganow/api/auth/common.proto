@@ -1,0 +1,12 @@
+syntax = "proto3";
+package eganow.api.auth;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+message AuthEmpty {}
+
+// The JSON representation for `StringValue` is JSON string.
+message AuthStringValue {
+  // The string value.
+  string value = 1;
+}

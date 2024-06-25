@@ -60,3 +60,7 @@ service EgaPayDeveloperApiSvc {
   // USE THE payment_payload.proto file as reference for the payload to send to them
 
 }
+
+service EgaPayCoreSvc {
+  rpc TransferMobileMoney(MobileMoneyTransferRequest) returns (MobileMoneyTransferResponse);
+}

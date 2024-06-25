@@ -1,0 +1,17 @@
+syntax = "proto3";
+package eganow.api.auth;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+message TokenRequest {
+  string user_guid = 1 [(google.api.field_behavior) = REQUIRED];
+  string username = 2 [(google.api.field_behavior) = REQUIRED]; // email or mobile number
+}
+
+message ValidateTokenResponse {
+  string user_guid = 1;
+  string mobile_number = 2;
+  string email = 3;
+}

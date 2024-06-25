@@ -4,7 +4,8 @@ package eganow.api.common;
 option go_package = "github.com/eganow/core/api;pb";
 
 import "google/api/annotations.proto";
-import "eganow/api/common/shared_payload.proto";
+import "eganow/api/common/common_data_payload.proto";
+import "eganow/api/common/common.proto";
 
 service CommonDataSvc {
   // get countries list
@@ -13,4 +14,8 @@ service CommonDataSvc {
       get: "/api/v1/common/countries/{filter}"
     };
   }
+}
+
+service CommonPaymentDataSvc {
+  rpc GetPaymentTypes(GetPaymentTypesRequest) returns (GetPaymentTypesResponse);
 }

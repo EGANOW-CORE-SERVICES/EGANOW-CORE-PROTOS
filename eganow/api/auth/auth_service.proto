@@ -1,0 +1,15 @@
+syntax = "proto3";
+package eganow.api.auth;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/auth/auth_payload.proto";
+import "eganow/api/auth/common.proto";
+
+service TokenSvc {
+  rpc CreateToken(TokenRequest) returns (AuthStringValue);
+  rpc ValidateToken(TokenRequest) returns (ValidateTokenResponse);
+  rpc RevokeToken(TokenRequest) returns (AuthStringValue);
+}
+
+service AuthSvc {}

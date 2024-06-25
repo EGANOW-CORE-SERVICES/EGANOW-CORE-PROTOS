@@ -86,3 +86,9 @@ message TransferCallbackResponse {
   string EganowTransRefNo = 6;
   string TransactionStatus = 7; // refer to EgaPayTransactionStatus - payment_entity.proto
 }
+
+// @todo - add content
+message MobileMoneyTransferRequest {}
+
+// @todo - add content
+message MobileMoneyTransferResponse {}

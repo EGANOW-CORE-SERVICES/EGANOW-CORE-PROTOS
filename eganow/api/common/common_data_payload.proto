@@ -1,0 +1,54 @@
+syntax = "proto3";
+package eganow.api.common;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+enum CountryFilter {
+  COUNTRY_FILTER_UNSPECIFIED = 0;
+  COUNTRY_FILTER_SIGNUP = 1; // signup countries
+  COUNTRY_FILTER_OPERATING = 2; // operating countries
+}
+
+enum PaymentAccountListType {
+  PAYMENT_ACCOUNT_LIST_TYPE_UNSPECIFIED = 0;
+  PAYMENT_ACCOUNT_LIST_TYPE_SOURCE = 1;
+  PAYMENT_ACCOUNT_LIST_TYPE_BENEFICIARY = 2;
+}
+
+message GetCountriesRequest {
+  CountryFilter filter = 1;
+}
+
+message Country {
+  string country_code = 1;
+  string country_name = 2;
+  string currency_iso = 3;
+  string country_flag_url = 4;
+  int32 min_mobile_number_length = 5;
+  int32 max_mobile_number_length = 6;
+  string dial_code = 7;
+}
+
+message GetCountriesResponse {
+  repeated Country countries = 1;
+}
+
+message GetPaymentTypesRequest {
+  string country_code = 1;
+  PaymentAccountListType list_type = 2;
+}
+
+message PaymentType {
+  string pay_partner_type_id = 1;
+  string pay_partner_type_desc = 2;
+  string app_name = 3;
+  string pay_partner_service_id = 4;
+  string pay_partner_service_name = 5;
+  string pay_partner_group_id = 6;
+  string partner_gateway_code = 7;
+  string logo_url = 8;
+}
+
+message GetPaymentTypesResponse {
+  repeated PaymentType payment_types = 1;
+}
