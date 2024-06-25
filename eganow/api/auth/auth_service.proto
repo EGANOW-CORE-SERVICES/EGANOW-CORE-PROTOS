@@ -9,7 +9,7 @@ import "eganow/api/auth/common.proto";
 service TokenSvc {
   rpc CreateToken(TokenRequest) returns (AuthStringValue);
   rpc ValidateToken(AuthStringValue) returns (ValidateTokenResponse);
-  rpc RevokeToken(TokenRequest) returns (AuthStringValue);
+  rpc RevokeToken(AuthStringValue) returns (AuthStringValue);
 }
 
 service AuthSvc {}
