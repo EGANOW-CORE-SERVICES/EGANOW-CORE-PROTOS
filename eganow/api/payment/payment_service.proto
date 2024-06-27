@@ -62,5 +62,5 @@ service EgaPayDeveloperApiSvc {
 }
 
 service EgaPayCoreSvc {
-  rpc TransferMobileMoney(MobileMoneyTransferRequest) returns (MobileMoneyTransferResponse);
+  rpc SendMoney(MoneyTransferRequest) returns (MoneyTransferResponse);
 }
