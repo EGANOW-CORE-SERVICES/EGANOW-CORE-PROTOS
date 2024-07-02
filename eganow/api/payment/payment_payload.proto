@@ -87,28 +87,6 @@ message TransferCallbackResponse {
   string TransactionStatus = 7; // refer to EgaPayTransactionStatus - payment_entity.proto
 }
 
-/*
- string senderPayPartnerServiceId = 1;
-  string beneficiaryPayPartnerServiceId = 2;
-  string senderTransCurrecyIso = 3;
-  string beneficiaryCurrecyIso = 4;
-  string beneficiaryAccountNo = 5;
-  string beneficiaryAccountName = 6;
-  double transAmount = 7;
-  string senderAccountNo = 8;
-  string senderAccountName = 9;
-  string mobileOrWebOrUSSD = 11; // FROM HEADER
-  string customerId = 12;  // FROM HEADER
-  string transNarration = 13;
-  int32 senderPaypartnerGroupId = 14;
-  int32 beneficiaryPaypartnerGroupId = 15;
-  string rememberMySourcePaymentAccountYesNo = 16;
-  string purposeOfTransferOrPayment =17;
-  string senderCountryCode = 40;
-  string beneficiaryCountryCode = 41;
-  string languageId = 51; // FROM HEADER
-*/
-
 message MoneyTransferRequest {
   message PaymentInfo {
     string service_id = 1 [(google.api.field_behavior) = REQUIRED];

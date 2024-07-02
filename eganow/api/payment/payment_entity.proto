@@ -15,3 +15,9 @@ enum EgaPayTransactionType {
   DR = 0;
   CR = 1;
 }
+
+enum PaymentMediumUsed {
+  PAYMENT_MEDIUM_UNKNOWN = 0;
+  PAYMENT_MEDIUM_MOBILE_MONEY = 1;
+  PAYMENT_MEDIUM_BANK_ACCOUNT = 2;
+}
