@@ -61,6 +61,10 @@ service EgaPayDeveloperApiSvc {
 
 }
 
-service EgaPayCoreSvc {
+service MoneyTransferSvc {
   rpc SendMoney(MoneyTransferRequest) returns (MoneyTransferResponse);
+}
+
+service NameEnquirySvc {
+  rpc GetAccountHolderName(NameEnquiryRequest) returns (NameEnquiryResponse);
 }
