@@ -5,7 +5,6 @@ option go_package = "github.com/eganow/core/api;pb";
 
 import "google/api/annotations.proto";
 import "eganow/api/common/common_data_payload.proto";
-import "eganow/api/common/common.proto";
 
 service CommonDataSvc {
   // get countries list

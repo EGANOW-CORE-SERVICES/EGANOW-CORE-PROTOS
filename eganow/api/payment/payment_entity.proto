@@ -3,8 +3,6 @@ package eganow.api.payment;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-import "google/api/field_behavior.proto";
-
 enum EgaPayTransactionStatus {
   PENDING = 0;
   SUCCESSFUL = 1;
