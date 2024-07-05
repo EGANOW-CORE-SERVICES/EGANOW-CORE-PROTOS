@@ -6,10 +6,10 @@ option go_package = "github.com/eganow/core/api;pb";
 import "eganow/api/auth/auth_payload.proto";
 import "eganow/api/auth/common.proto";
 
-service TokenSvc {
+service CoreTokenSvc {
   rpc CreateToken(TokenRequest) returns (AuthStringValue);
   rpc ValidateToken(AuthStringValue) returns (ValidateTokenResponse);
   rpc RevokeToken(AuthStringValue) returns (AuthStringValue);
 }
 
-service AuthSvc {}
+service CoreAuthSvc {}

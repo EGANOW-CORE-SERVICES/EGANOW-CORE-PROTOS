@@ -6,6 +6,6 @@ option go_package = "github.com/eganow/core/api;pb";
 import "eganow/api/media/common.proto";
 import "eganow/api/media/media_payload.proto";
 
-service MediaSvc {
+service CoreMediaSvc {
   rpc UploadMedia(MediaUploadRequest) returns (MediaStringValue);
 }

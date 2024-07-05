@@ -8,7 +8,7 @@ import "eganow/api/merchant/common_payload.proto";
 import "google/api/annotations.proto";
 
 
-service MerchantCommonSvc {
+service CoreMerchantCommonSvc {
   rpc GetActiveRegulators(MerchantEmpty) returns (MerchantRegulatorList) {
     option (google.api.http) = {
       get: "/api/v1/merchants/common/regulators"

@@ -9,7 +9,7 @@ import "eganow/api/customer/common.proto";
 import "google/api/annotations.proto";
 
 
-service CustomerOnboardingSvc {
+service CoreCustomerOnboardingSvc {
   rpc CreateCustomerAccount(CreateCustomerRequest) returns (CustomerStringValue) {
       option(google.api.http) = {
         post : "/api/v1/customers/onboarding/register",

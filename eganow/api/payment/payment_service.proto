@@ -7,7 +7,7 @@ import "eganow/api/payment/common.proto";
 import "google/api/annotations.proto";
 import "eganow/api/payment/payment_payload.proto";
 
-service EgaPayDeveloperApiSvc {
+service CoreEgaPayDeveloperApiSvc {
   rpc GetAccessToken(EgaPayEmpty) returns (AccessTokenResponse) {
     option (google.api.http) = {
       get: "/eganow/api/accesstoken"
@@ -61,10 +61,10 @@ service EgaPayDeveloperApiSvc {
 
 }
 
-service MoneyTransferSvc {
+service CoreMoneyTransferSvc {
   rpc SendMoney(MoneyTransferRequest) returns (MoneyTransferResponse);
 }
 
-service NameEnquirySvc {
+service CoreNameEnquirySvc {
   rpc GetAccountHolderName(NameEnquiryRequest) returns (NameEnquiryResponse);
 }

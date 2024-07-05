@@ -8,7 +8,7 @@ import "eganow/api/merchant/account_payload.proto";
 import "google/api/annotations.proto";
 
 
-service MerchantAccountSvc {
+service CoreMerchantAccountSvc {
   // GetBusinessInfo is a remote procedure call (RPC) that retrieves business information for a merchant.
   // It takes a MerchantEmpty message as input and returns a BusinessInfoResponse message.
   // The BusinessInfoResponse message will contain the business information of the merchant.

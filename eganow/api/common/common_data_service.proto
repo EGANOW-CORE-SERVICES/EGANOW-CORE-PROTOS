@@ -6,7 +6,7 @@ option go_package = "github.com/eganow/core/api;pb";
 import "google/api/annotations.proto";
 import "eganow/api/common/common_data_payload.proto";
 
-service CommonDataSvc {
+service CoreCommonDataSvc {
   // get countries list
   rpc GetCountries (GetCountriesRequest) returns (GetCountriesResponse) {
     option (google.api.http) = {
@@ -15,6 +15,6 @@ service CommonDataSvc {
   }
 }
 
-service CommonPaymentDataSvc {
+service CoreCommonPaymentDataSvc {
   rpc GetPaymentTypes(GetPaymentTypesRequest) returns (GetPaymentTypesResponse);
 }

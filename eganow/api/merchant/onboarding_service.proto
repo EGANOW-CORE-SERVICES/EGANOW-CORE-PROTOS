@@ -7,7 +7,7 @@ import "eganow/api/merchant/common.proto";
 import "eganow/api/merchant/onboarding_payload.proto";
 import "google/api/annotations.proto";
 
-service MerchantOnboardingSvc {
+service CoreMerchantOnboardingSvc {
   // CreateMerchantAccount is a remote procedure call (RPC) that creates a new merchant account.
   // It takes a CreateMerchantRequest message as input and returns an AuthMerchantResponse message.
   // The CreateMerchantRequest message should contain the necessary information to create a new merchant account.

@@ -7,7 +7,7 @@ import "google/api/annotations.proto";
 import "eganow/api/common/otp_payload.proto";
 import "eganow/api/common/common.proto";
 
-service OtpSvc {
+service CoreOtpSvc {
   // send OTP to a given phone number or email
   rpc SendOTP (SendOTPRequest) returns (CommonStringValue) {
     option (google.api.http) = {
