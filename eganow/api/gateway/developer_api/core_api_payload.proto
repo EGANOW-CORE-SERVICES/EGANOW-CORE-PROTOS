@@ -1,0 +1,90 @@
+syntax = "proto3";
+package eganow.api.gateway.developer_api;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+message CoreEgaPayDeveloperApiEmpty {}
+
+message AccessTokenResponse {
+  bool Status = 1;
+  string Message = 2;
+  string Token = 3;
+}
+
+message GetAccountInfoRequest {
+  string CustomerAcctNo = 1 [(google.api.field_behavior) = REQUIRED];
+  string PayPartnerServiceId = 2 [(google.api.field_behavior) = REQUIRED];
+  string LanguageId = 3 [(google.api.field_behavior) = REQUIRED];
+  string CountryCode = 4 [(google.api.field_behavior) = REQUIRED];
+}
+
+message GetAccountInfoResponse {
+  bool Status = 1;
+  string Message = 2;
+  string AccountName = 3;
+}
+
+message GetServiceListRequest {
+  string LanguageId = 3 [(google.api.field_behavior) = REQUIRED];
+  string CountryCode = 4 [(google.api.field_behavior) = REQUIRED];
+}
+
+message ServicePayload {
+  int32 PayPartnerTypeId = 1;
+  int32 PayPartnerGroupId = 2;
+  string AppName = 3;
+  string CountryCode = 4;
+  string CountryName = 5;
+  string PayPartnerGroupUrl = 6;
+}
+
+message GetServiceListResponse {
+  bool Status = 1;
+  string Message = 2;
+  repeated ServicePayload PaymentTypeList = 3;
+}
+
+message TransferRequest {
+  string PayPartnerServiceId = 1 [(google.api.field_behavior) = REQUIRED]; // this determines whether is is a card or mobile wallet transaction
+  float Amount = 2 [(google.api.field_behavior) = REQUIRED];
+  string AccountNoOrCardNoOrMSISDN = 3 [(google.api.field_behavior) = REQUIRED];
+  string AccountName = 4 [(google.api.field_behavior) = REQUIRED];
+  string TransactionId = 5 [(google.api.field_behavior) = REQUIRED];
+  string Narration = 6 [(google.api.field_behavior) = REQUIRED];
+  string TransCurrencyIso = 7 [(google.api.field_behavior) = REQUIRED];
+  int32 ExpiryDateMonth = 8 [(google.api.field_behavior) = REQUIRED];
+  int32 ExpiryDateYear = 9 [(google.api.field_behavior) = REQUIRED];
+  int32 Cvv = 10 [(google.api.field_behavior) = REQUIRED];
+  string LanguageId = 11 [(google.api.field_behavior) = REQUIRED];
+}
+
+message TransferResponse {
+  bool Status = 1;
+  string Message = 2;
+  string ReferenceNo = 3;
+  string TransStatus = 4; // refer to EgaPayTransactionStatus - payment_entity.proto
+}
+
+message QueryTransferStatusRequest {
+  string TransactionId = 1 [(google.api.field_behavior) = REQUIRED];
+  string LanguageId = 3 [(google.api.field_behavior) = REQUIRED];
+}
+
+message QueryTransferStatusTransferResponse {
+  bool Status = 1;
+  string Message = 2;
+  string ReferenceNo = 3;
+  string TransStatus = 4; // refer to EgaPayTransactionStatus - payment_entity.proto
+}
+
+message TransferCallbackResponse {
+  string MerchantId = 1;
+  string TransactionRefNo = 2;
+  string TransTypeDRCR = 3; // refer to EgaPayTransactionType - payment_entity.proto
+  bool Status = 4;
+  string MiddlewareTransId = 5;
+  string EganowTransRefNo = 6;
+  string TransactionStatus = 7; // refer to EgaPayTransactionStatus - payment_entity.proto
+}

@@ -3,68 +3,13 @@ package eganow.api.payment;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-import "eganow/api/payment/common.proto";
-import "google/api/annotations.proto";
 import "eganow/api/payment/payment_payload.proto";
 
-service CoreEgaPayDeveloperApiSvc {
-  rpc GetAccessToken(EgaPayEmpty) returns (AccessTokenResponse) {
-    option (google.api.http) = {
-      get: "/eganow/api/accesstoken"
-    };
-  }
-
-  rpc GetAccountHolderInfo(GetAccountInfoRequest) returns (GetAccountInfoResponse) {
-    option (google.api.http) = {
-      post: "/eganow/api/kyc/accountinfo"
-      body: "*"
-    };
-  }
-
-  rpc GetCollectionServiceList(GetServiceListRequest) returns (GetServiceListResponse) {
-    option (google.api.http) = {
-      post: "/eganow/api/enquiry/collectionservices"
-      body: "*"
-    };
-  }
-
-  rpc GetPayoutServiceList(GetServiceListRequest) returns (GetServiceListResponse) {
-    option (google.api.http) = {
-      post: "/eganow/api/enquiry/payoutservices"
-      body: "*"
-    };
-  }
-
-  rpc PayoutCreditAccount(TransferRequest) returns (TransferResponse) {
-    option (google.api.http) = {
-      post: "/eganow/api/transfer/creditaccount"
-      body: "*"
-    };
-  }
-
-  rpc CollectionDebitAccount(TransferRequest) returns (TransferResponse) {
-    option (google.api.http) = {
-      post: "/eganow/api/transfer/debitaccount"
-      body: "*"
-    };
-  }
-
-  rpc TransactionStatusQuery(QueryTransferStatusRequest) returns (QueryTransferStatusTransferResponse) {
-    option (google.api.http) = {
-      post: "/eganow/api/transfer/transstatus"
-      body: "*"
-    };
-  }
-
-  // NB: PERFORM A CALLBACK TO THE CALLING API SERVICE WHEN A TRANSFER (PAYOUT/COLLECTION) IS MADE.
-  // USE THE payment_payload.proto file as reference for the payload to send to them
-
-}
-
 service CoreMoneyTransferSvc {
-  rpc SendMoney(MoneyTransferRequest) returns (MoneyTransferResponse);
+  rpc CollectMoney(PaymentMoneyTransferRequest) returns (PaymentMoneyTransferResponse);
+  rpc PayoutMoney(PaymentMoneyTransferRequest) returns (PaymentMoneyTransferResponse);
 }
 
 service CoreNameEnquirySvc {
-  rpc GetAccountHolderName(NameEnquiryRequest) returns (NameEnquiryResponse);
+  rpc GetAccountHolderName(PaymentNameEnquiryRequest) returns (PaymentNameEnquiryResponse);
 }

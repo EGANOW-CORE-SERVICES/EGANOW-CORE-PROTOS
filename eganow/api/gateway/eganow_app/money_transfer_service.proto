@@ -1,0 +1,10 @@
+syntax = "proto3";
+package eganow.api.gateway.eganow_app;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "eganow/api/gateway/eganow_app/money_transfer_payload.proto";
+
+service CoreEganowAppMoneyTransferGatewaySvc {
+  rpc GetAccountHolderName (EganowAppGatewayNameEnquiryRequest) returns (EganowAppGatewayNameEnquiryResponse);
+}

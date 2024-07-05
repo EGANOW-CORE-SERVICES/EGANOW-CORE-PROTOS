@@ -1,0 +1,37 @@
+syntax = "proto3";
+package eganow.api.gateway.eganow_app;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+import "google/api/field_behavior.proto";
+
+message EganowAppGatewayNameEnquiryRequest {
+  enum RequestType {
+    UNSPECIFIED = 0;
+    DEBIT = 1;
+    CREDIT = 2;
+  }
+
+  message BankNameEnquiryRequest {
+    string recipient_account_number = 1 [(google.api.field_behavior) = REQUIRED];
+    string terminal_id = 2; // required for GHQR - GHIPSS
+    string bank_code = 3 [(google.api.field_behavior) = REQUIRED]; // 3 digits
+    string sender_account_name = 4 [(google.api.field_behavior) = REQUIRED];
+    string sender_account_number = 5 [(google.api.field_behavior) = REQUIRED];
+    RequestType request_type = 6 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  oneof account_number {
+    BankNameEnquiryRequest bank_name_enquiry_request = 2;
+    string phone_number = 3 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  string pay_partner_service_id = 5 [(google.api.field_behavior) = REQUIRED];
+}
+
+message EganowAppGatewayNameEnquiryResponse {
+  oneof account_holder {
+    string name = 1;
+    string qr_code = 2;
+  }
+}
