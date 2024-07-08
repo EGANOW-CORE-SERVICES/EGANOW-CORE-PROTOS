@@ -10,7 +10,7 @@ message PaymentMoneyTransferRequest {
   message PaymentInfo {
     string service_id = 1 [(google.api.field_behavior) = REQUIRED];
     string currency_iso = 2 [(google.api.field_behavior) = REQUIRED];
-    string account_number = 3 [(google.api.field_behavior) = REQUIRED];
+    string account_number = 3 [(google.api.field_behavior) = REQUIRED]; // phone number / bank account number
     string account_name = 4 [(google.api.field_behavior) = REQUIRED];
     int32 group_id = 5 [(google.api.field_behavior) = REQUIRED];
     string country_code = 6 [(google.api.field_behavior) = REQUIRED];
