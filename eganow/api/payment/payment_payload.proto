@@ -70,4 +70,6 @@ message PaymentStatusQueryRequest {
     BankStatusQueryRequest bank_status_query = 1;
     MobileStatusQueryRequest mobile_status_query = 2;
   }
+
+  string pay_partner_service_id = 3 [(google.api.field_behavior) = REQUIRED];
 }

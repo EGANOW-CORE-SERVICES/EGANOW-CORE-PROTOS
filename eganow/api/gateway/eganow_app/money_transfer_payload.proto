@@ -22,7 +22,6 @@ message EganowAppGatewayNameEnquiryRequest {
   }
 
   string pay_partner_service_id = 5 [(google.api.field_behavior) = REQUIRED];
-
 }
 
 message EganowAppGatewayGhQrNameEnquiryRequest {
