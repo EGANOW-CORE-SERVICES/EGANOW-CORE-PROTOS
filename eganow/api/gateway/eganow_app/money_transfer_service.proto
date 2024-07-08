@@ -4,7 +4,13 @@ package eganow.api.gateway.eganow_app;
 option go_package = "github.com/eganow/core/api;pb";
 
 import "eganow/api/gateway/eganow_app/money_transfer_payload.proto";
+import "eganow/api/gateway/eganow_app/common.proto";
 
-service CoreEganowAppMoneyTransferGatewaySvc {
-  rpc GetAccountHolderName (EganowAppGatewayNameEnquiryRequest) returns (EganowAppGatewayNameEnquiryResponse);
+service CoreEganowAppGatewayMoneyTransferSvc {
+  // @todo - add collection, tsq & payout services
+}
+
+service CoreEganowAppGatewayNameEnquirySvc {
+  rpc GetAccountHolderName (EganowAppGatewayNameEnquiryRequest) returns (EganowAppGatewayStringValue);
+  rpc GetGhQrAccountHolderName (EganowAppGatewayGhQrNameEnquiryRequest) returns (EganowAppGatewayStringValue);
 }

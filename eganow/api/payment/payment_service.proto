@@ -4,12 +4,15 @@ package eganow.api.payment;
 option go_package = "github.com/eganow/core/api;pb";
 
 import "eganow/api/payment/payment_payload.proto";
+import "eganow/api/payment/common.proto";
 
 service CoreMoneyTransferSvc {
   rpc CollectMoney(PaymentMoneyTransferRequest) returns (PaymentMoneyTransferResponse);
   rpc PayoutMoney(PaymentMoneyTransferRequest) returns (PaymentMoneyTransferResponse);
+  rpc QueryTransactionStatus(PaymentStatusQueryRequest) returns (PaymentStringValue);
 }
 
 service CoreNameEnquirySvc {
-  rpc GetAccountHolderName(PaymentNameEnquiryRequest) returns (PaymentNameEnquiryResponse);
+  rpc GetAccountHolderName(PaymentNameEnquiryRequest) returns (PaymentStringValue);
+  rpc GetGhQrAccountHolderName(PaymentGhQrNameEnquiryRequest) returns (PaymentStringValue);
 }

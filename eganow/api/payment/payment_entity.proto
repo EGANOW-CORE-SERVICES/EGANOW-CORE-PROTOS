@@ -3,13 +3,22 @@ package eganow.api.payment;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-enum EgaPayTransactionStatus {
+enum PaymentTransactionStatus {
   PENDING = 0;
   SUCCESSFUL = 1;
   FAILED = 2;
 }
 
-enum EgaPayTransactionType {
-  DR = 0;
-  CR = 1;
+enum PaymentTransactionType {
+  UNSPECIFIED_TRANSACTION_TYPE = 0;
+  TRANSACTION_TYPE_COLLECTION = 1;
+  TRANSACTION_TYPE_PAYOUT = 2;
+  TRANSACTION_TYPE_REMITTANCE = 3; // for remittance (GHIPSS)
+  TRANSACTION_TYPE_QR_CREDIT = 4; // for QR code credit transactions
+}
+
+enum PaymentBankRequestType {
+  BANK_REQ_UNSPECIFIED = 0;
+  BANK_REQ_DEBIT = 1;
+  BANK_REQ_CREDIT = 2;
 }

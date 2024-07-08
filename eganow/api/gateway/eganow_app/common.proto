@@ -1,10 +1,8 @@
 syntax = "proto3";
-package eganow.api.payment;
+package eganow.api.gateway.eganow_app;
 
 option go_package = "github.com/eganow/core/api;pb";
 
-message PaymentEmpty {}
-
-message PaymentStringValue {
+message EganowAppGatewayStringValue {
   string value = 1;
 }

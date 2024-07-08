@@ -1,0 +1,10 @@
+syntax = "proto3";
+package eganow.api.gateway.eganow_app;
+
+option go_package = "github.com/eganow/core/api;pb";
+
+enum EganowAppGatewayBankRequestType {
+  BANK_REQ_UNSPECIFIED = 0;
+  BANK_REQ_DEBIT = 1;
+  BANK_REQ_CREDIT = 2;
+}
