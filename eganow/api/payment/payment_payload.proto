@@ -44,7 +44,7 @@ message PaymentNameEnquiryRequest {
   }
 
   oneof account_number {
-    BankNameEnquiryRequest bank_name_enquiry_request = 2;
+    BankNameEnquiryRequest bank_account_name_request = 2;
     string phone_number = 3 [(google.api.field_behavior) = REQUIRED];
   }
 
