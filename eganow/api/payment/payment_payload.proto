@@ -20,6 +20,7 @@ message PaymentMoneyTransferRequest {
   PaymentInfo beneficiary_info = 2 [(google.api.field_behavior) = REQUIRED];
   float amount = 3 [(google.api.field_behavior) = REQUIRED];
   string narration = 4 [(google.api.field_behavior) = REQUIRED];
+  PaymentTransactionType transaction_type = 5 [(google.api.field_behavior) = REQUIRED];
 }
 
 message PaymentMoneyTransferResponse {
